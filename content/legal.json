@@ -1,0 +1,79 @@
+{
+  "impressum": {
+    "title": "Impressum",
+    "intro": "Angaben zum Betrieb. Die Firmendaten stammen aus dem öffentlichen Handelsregister und sind vor dem Livegang zu bestätigen sowie rechtlich prüfen zu lassen.",
+    "sections": [
+      {
+        "heading": "Verantwortlich für den Inhalt",
+        "paragraphs": [
+          "Gleis 1 Take Away GmbH",
+          "Poststrasse 7, 4410 Liestal, Schweiz"
+        ]
+      },
+      {
+        "heading": "Kontakt",
+        "paragraphs": [
+          "Telefon: 061 921 04 40",
+          "Platzhalter: E-Mail-Adresse für Anfragen ergänzen."
+        ]
+      },
+      {
+        "heading": "Handelsregister und Mehrwertsteuer",
+        "paragraphs": [
+          "UID: CHE-262.813.970",
+          "Eingetragen im Handelsregister des Kantons Basel-Landschaft.",
+          "Platzhalter: MWST-Nummer ergänzen, falls der Betrieb mehrwertsteuerpflichtig ist."
+        ]
+      },
+      {
+        "heading": "Haftungsausschluss",
+        "paragraphs": [
+          "Die Inhalte dieser Website werden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität — insbesondere bei Preisen und Öffnungszeiten — wird keine Gewähr übernommen.",
+          "Für Inhalte verlinkter externer Seiten sind ausschliesslich deren Betreiber verantwortlich.",
+          "Texte, Bilder und Gestaltung dieser Website sind urheberrechtlich geschützt. Eine Verwendung ausserhalb dieser Website bedarf der vorherigen Zustimmung."
+        ]
+      }
+    ]
+  },
+  "datenschutz": {
+    "title": "Datenschutz",
+    "intro": "Diese Website ist bewusst datensparsam gebaut. Bitte die Erklärung vor dem Livegang auf den Betrieb und den gewählten Hosting-Anbieter zuschneiden lassen.",
+    "sections": [
+      {
+        "heading": "Verantwortliche Stelle",
+        "paragraphs": [
+          "Verantwortlich im Sinne des Schweizer Datenschutzgesetzes (DSG):",
+          "Gleis 1 Take Away GmbH, Poststrasse 7, 4410 Liestal, Telefon 061 921 04 40."
+        ]
+      },
+      {
+        "heading": "Welche Daten erhoben werden",
+        "paragraphs": [
+          "Diese Website lädt keine Analyse-Dienste, keine Werbe-Tracker und keine externen Schriftarten. Es werden keine Cookies gesetzt, die eine Einwilligung erfordern.",
+          "Es gibt kein Kontaktformular und keine Anmeldung — es werden also keine Daten aktiv von Ihnen erfasst.",
+          "Platzhalter: Ergänzen, falls später ein Kontaktformular, eine Reservierung oder eine Statistik dazukommt."
+        ]
+      },
+      {
+        "heading": "Server-Protokolle",
+        "paragraphs": [
+          "Beim Abruf der Seite protokolliert der Hosting-Anbieter technisch notwendige Daten wie IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene Seite und Browsertyp.",
+          "Platzhalter: Anbieter und Aufbewahrungsdauer eintragen, sobald das Hosting feststeht."
+        ]
+      },
+      {
+        "heading": "Externe Links",
+        "paragraphs": [
+          "Beim Klick auf die Kartenverlinkung oder auf die Bewertungsseite verlassen Sie diese Website. Ab diesem Zeitpunkt gelten die Datenschutzbestimmungen des jeweiligen Anbieters."
+        ]
+      },
+      {
+        "heading": "Ihre Rechte",
+        "paragraphs": [
+          "Sie haben das Recht auf Auskunft über die zu Ihrer Person bearbeiteten Daten sowie auf deren Berichtigung oder Löschung.",
+          "Wenden Sie sich dafür an die oben genannte verantwortliche Stelle."
+        ]
+      }
+    ]
+  }
+}

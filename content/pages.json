@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "eyebrow": "Direkt beim Bahnhof Liestal",
+    "titleLines": [
+      "Kebab,",
+      "frisch vom",
+      "Drehspiess."
+    ],
+    "subtitle": "Döner, Dürüm, Pizza und Falafel an der Poststrasse 7. Zum Mitnehmen oder gemütlich bei uns – drinnen und draussen.",
+    "primaryCta": {
+      "label": "Zur Speisekarte",
+      "href": "#speisekarte"
+    },
+    "secondaryCta": {
+      "label": "061 921 04 40",
+      "href": "tel:+41619210440"
+    },
+    "facts": [
+      "Sitzplätze drinnen & draussen",
+      "Zum Mitnehmen",
+      "Rollstuhlgängig"
+    ],
+    "image": {
+      "src": "",
+      "alt": "Blick auf den Drehspiess im Gleis 1",
+      "placeholderLabel": "Hero-Bild"
+    }
+  },
+  "valueStrip": [
+    "Kebab",
+    "Dürüm",
+    "Pizza",
+    "Falafel",
+    "Lahmacun",
+    "Pepito",
+    "Salate",
+    "Pommes"
+  ],
+  "highlights": {
+    "eyebrow": "Warum Gleis 1",
+    "title": "Drei gute Gründe",
+    "items": [
+      {
+        "id": "h1",
+        "icon": "train",
+        "title": "Zug erreicht, Hunger gestillt",
+        "text": "Wir liegen direkt am Bahnhof Liestal. Zwischen zwei Zügen reicht die Zeit locker."
+      },
+      {
+        "id": "h2",
+        "icon": "clock",
+        "title": "Ab 9 Uhr für Sie da",
+        "text": "Sieben Tage die Woche, von morgens bis spät am Abend."
+      },
+      {
+        "id": "h3",
+        "icon": "hand",
+        "title": "Mitnehmen oder bleiben",
+        "text": "Sitzplätze drinnen und draussen, rollstuhlgängig. Oder einfach einpacken lassen."
+      }
+    ]
+  },
+  "menuSection": {
+    "title": "Speisekarte",
+    "intro": "Kebab vom Drehspiess, dazu Pizza, Falafel und unsere Hausspezialität Pepito."
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "title": "Kurz zu uns",
+    "paragraphs": [
+      "Gleis 1 ist ein Kebab-Take-away an der Poststrasse in Liestal, direkt beim Bahnhof. Wir kochen für Pendlerinnen und Pendler, für die Mittagspause und für alle, die abends noch etwas Warmes wollen.",
+      "Platzhalter: Hier ergänzen Sie später Ihre Geschichte – wer hinter dem Lokal steht, seit wann es Sie gibt und was Ihnen bei der Zubereitung wichtig ist."
+    ],
+    "stats": [
+      {
+        "value": "7",
+        "label": "Tage pro Woche offen"
+      },
+      {
+        "value": "09:00",
+        "label": "Uhr geht es los"
+      },
+      {
+        "value": "200 m",
+        "label": "zu den Parkplätzen"
+      }
+    ],
+    "image": {
+      "src": "",
+      "alt": "Innenansicht des Lokals",
+      "placeholderLabel": "Über uns"
+    }
+  },
+  "visit": {
+    "eyebrow": "Besuch",
+    "title": "Vorbeikommen",
+    "intro": "Öffnungszeiten, Adresse und Telefonnummer auf einen Blick.",
+    "infos": [
+      {
+        "label": "Sitzplätze",
+        "value": "Drinnen und draussen"
+      },
+      {
+        "label": "Zugang",
+        "value": "Rollstuhlgängig"
+      },
+      {
+        "label": "Zahlungsmittel",
+        "value": "Bar und Karte"
+      },
+      {
+        "label": "Parkplätze",
+        "value": "Rund 200 Meter entfernt"
+      }
+    ]
+  },
+  "footer": {
+    "note": "Kebab & Take Away an der Poststrasse 7, direkt beim Bahnhof Liestal.",
+    "legalLinks": [
+      {
+        "label": "Impressum",
+        "href": "/impressum"
+      },
+      {
+        "label": "Datenschutz",
+        "href": "/datenschutz"
+      }
+    ]
+  }
+}

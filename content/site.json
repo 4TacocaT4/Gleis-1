@@ -1,0 +1,53 @@
+{
+  "name": "Gleis 1",
+  "legalName": "Gleis 1 Take Away GmbH",
+  "tagline": "Kebab & Take Away",
+  "locality": "Liestal",
+  "priceRange": "CHF",
+  "cuisine": ["Kebab", "Türkisch", "Pizza", "Street Food"],
+  "address": {
+    "street": "Poststrasse 7",
+    "zip": "4410",
+    "city": "Liestal",
+    "region": "Basel-Landschaft",
+    "country": "Schweiz",
+    "countryCode": "CH",
+    "hint": "Direkt beim Bahnhof Liestal. Parkplätze rund 200 Meter entfernt.",
+    "mapsQuery": "Gleis 1 Kebab Take away, Poststrasse 7, 4410 Liestal",
+    "geo": null
+  },
+  "contact": {
+    "phone": "061 921 04 40",
+    "phoneHref": "+41619210440",
+    "email": "",
+    "whatsapp": ""
+  },
+  "social": [],
+  "seo": {
+    "siteUrl": "https://example.ch",
+    "title": "Gleis 1 – Kebab & Take Away in Liestal",
+    "titleTemplate": "%s | Gleis 1 Liestal",
+    "description": "Kebab, Dürüm, Pizza und Falafel direkt beim Bahnhof Liestal. Zum Mitnehmen oder vor Ort geniessen – drinnen und draussen. Poststrasse 7, 4410 Liestal.",
+    "keywords": [
+      "Kebab Liestal",
+      "Döner Liestal",
+      "Take Away Liestal",
+      "Dürüm Liestal",
+      "Pizza Liestal",
+      "Gleis 1 Liestal",
+      "Bahnhof Liestal Essen",
+      "Falafel Baselland"
+    ],
+    "ogImageAlt": "Gleis 1 – Kebab & Take Away in Liestal"
+  },
+  "facts": {
+    "seating": "Sitzplätze drinnen und draussen",
+    "takeaway": "Zum Mitnehmen",
+    "accessibility": "Rollstuhlgängig",
+    "payment": "Bar und Karte",
+    "parking": "Parkplätze ca. 200 m entfernt",
+    "station": "Direkt beim Bahnhof Liestal"
+  },
+  "demoMode": true,
+  "demoNotice": "Vorschau: Adresse, Telefon und Öffnungszeiten stammen aus öffentlichen Verzeichnissen und sind noch nicht bestätigt. Alle Preise sind Platzhalter."
+}

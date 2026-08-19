@@ -1,0 +1,267 @@
+{
+  "currency": "CHF",
+  "priceNotice": "Die Preise sind noch nicht hinterlegt. Alle angezeigten Beträge sind Platzhalter.",
+  "note": "Angaben zu Allergenen und Zusatzstoffen erhalten Sie gerne im Lokal oder telefonisch.",
+  "categories": [
+    {
+      "id": "kebab",
+      "name": "Kebab",
+      "description": "Vom Drehspiess – im Brot, gerollt oder als Teller.",
+      "items": [
+        {
+          "id": "doener-brot",
+          "name": "Döner im Brot",
+          "description": "Der Klassiker im Fladenbrot, mit Salat und Sauce nach Wahl.",
+          "price": 12.5,
+          "badges": ["beliebt"],
+          "featured": true,
+          "available": true,
+          "image": {
+            "src": "",
+            "alt": "Döner im Fladenbrot",
+            "placeholderLabel": "Döner im Brot"
+          }
+        },
+        {
+          "id": "duerueum",
+          "name": "Dürüm",
+          "description": "Im dünnen Fladen gerollt, mit Salat und Sauce nach Wahl.",
+          "price": 13.5,
+          "badges": [],
+          "featured": true,
+          "available": true,
+          "image": {
+            "src": "",
+            "alt": "Dürüm gerollt",
+            "placeholderLabel": "Dürüm"
+          }
+        },
+        {
+          "id": "kebab-teller",
+          "name": "Kebab Teller",
+          "description": "Grosse Portion mit Beilage, Salat und Sauce.",
+          "price": 21.5,
+          "badges": ["beliebt"],
+          "featured": true,
+          "available": true,
+          "image": {
+            "src": "",
+            "alt": "Kebab Teller mit Beilagen",
+            "placeholderLabel": "Kebab Teller"
+          }
+        },
+        {
+          "id": "kebab-box",
+          "name": "Kebab Box",
+          "description": "Handliche Box mit Pommes, Fleisch und Sauce.",
+          "price": 12.0,
+          "badges": [],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "kebab-klein",
+          "name": "Kleiner Kebab",
+          "description": "Kleinere Portion im Brot.",
+          "price": 9.5,
+          "badges": [],
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "spezialitaeten",
+      "name": "Spezialitäten",
+      "description": "Was es nicht überall gibt.",
+      "items": [
+        {
+          "id": "pepito",
+          "name": "Pepito",
+          "description": "Poulet vom Grill mit frischem Gemüse – unsere Hausspezialität.",
+          "price": 15.5,
+          "badges": ["hausgemacht"],
+          "featured": true,
+          "available": true,
+          "image": {
+            "src": "",
+            "alt": "Pepito mit Poulet und frischem Gemüse",
+            "placeholderLabel": "Pepito"
+          }
+        },
+        {
+          "id": "lahmacun",
+          "name": "Lahmacun",
+          "description": "Dünner Teigfladen aus dem Ofen, zum Rollen.",
+          "price": 9.5,
+          "badges": [],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "lahmacun-belegt",
+          "name": "Lahmacun belegt",
+          "description": "Mit Salat und Sauce gefüllt und gerollt.",
+          "price": 13.5,
+          "badges": [],
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "description": "Frisch aus dem Ofen.",
+      "items": [
+        {
+          "id": "pizza-sorte",
+          "name": "Pizza",
+          "description": "Sorte nach Wahl. Die vollständige Sortenliste folgt.",
+          "price": 16.5,
+          "badges": [],
+          "featured": true,
+          "available": true,
+          "image": {
+            "src": "",
+            "alt": "Pizza aus dem Ofen",
+            "placeholderLabel": "Pizza"
+          }
+        },
+        {
+          "id": "pizza-vegetarisch",
+          "name": "Pizza vegetarisch",
+          "description": "Ohne Fleisch, Sorte nach Wahl.",
+          "price": 16.5,
+          "badges": ["vegetarisch"],
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "vegetarisch",
+      "name": "Vegetarisch",
+      "description": "Ohne Fleisch, mit Falafel.",
+      "items": [
+        {
+          "id": "falafel-brot",
+          "name": "Falafel im Brot",
+          "description": "Falafel mit Salat und Sauce im Fladenbrot.",
+          "price": 11.5,
+          "badges": ["vegetarisch"],
+          "featured": true,
+          "available": true,
+          "image": {
+            "src": "",
+            "alt": "Falafel im Fladenbrot",
+            "placeholderLabel": "Falafel"
+          }
+        },
+        {
+          "id": "falafel-duerueum",
+          "name": "Falafel Dürüm",
+          "description": "Falafel gerollt, mit Salat und Sauce.",
+          "price": 12.5,
+          "badges": ["vegetarisch"],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "falafel-teller",
+          "name": "Falafel Teller",
+          "description": "Falafel mit Beilage und Salat.",
+          "price": 19.5,
+          "badges": ["vegetarisch"],
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "beilagen",
+      "name": "Salate & Beilagen",
+      "description": "Passt zu allem.",
+      "items": [
+        {
+          "id": "salat-gross",
+          "name": "Grosser Salat",
+          "description": "Gemischter Salat mit Dressing nach Wahl.",
+          "price": 13.5,
+          "badges": ["vegetarisch"],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "salat-klein",
+          "name": "Beilagensalat",
+          "description": "Kleine Portion gemischter Salat.",
+          "price": 6.0,
+          "badges": ["vegetarisch"],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pommes",
+          "name": "Pommes",
+          "description": "Frittiert, mit Sauce nach Wahl.",
+          "price": 6.5,
+          "variants": [
+            { "label": "Klein", "price": 6.5 },
+            { "label": "Gross", "price": 8.5 }
+          ],
+          "badges": ["vegetarisch"],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "sauce-extra",
+          "name": "Extra Sauce",
+          "description": "Zusätzliche Portion Sauce.",
+          "price": 1.5,
+          "badges": [],
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "getraenke",
+      "name": "Getränke",
+      "description": "Kalt und erfrischend.",
+      "items": [
+        {
+          "id": "softdrink",
+          "name": "Softdrink",
+          "description": "Auswahl an alkoholfreien Getränken.",
+          "price": 3.5,
+          "variants": [
+            { "label": "3 dl", "price": 3.5 },
+            { "label": "5 dl", "price": 4.5 }
+          ],
+          "badges": [],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "wasser",
+          "name": "Mineralwasser",
+          "description": "Mit oder ohne Kohlensäure.",
+          "price": 3.0,
+          "badges": [],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "ayran",
+          "name": "Ayran",
+          "description": "Klassisches Joghurtgetränk.",
+          "price": 3.5,
+          "badges": [],
+          "available": true,
+          "image": null
+        }
+      ]
+    }
+  ]
+}

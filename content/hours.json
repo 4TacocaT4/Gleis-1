@@ -1,0 +1,55 @@
+{
+  "timezone": "Europe/Zurich",
+  "days": [
+    {
+      "key": "mon",
+      "label": "Montag",
+      "shortLabel": "Mo",
+      "closed": false,
+      "slots": [{ "open": "09:00", "close": "22:00" }]
+    },
+    {
+      "key": "tue",
+      "label": "Dienstag",
+      "shortLabel": "Di",
+      "closed": false,
+      "slots": [{ "open": "09:00", "close": "22:00" }]
+    },
+    {
+      "key": "wed",
+      "label": "Mittwoch",
+      "shortLabel": "Mi",
+      "closed": false,
+      "slots": [{ "open": "09:00", "close": "22:00" }]
+    },
+    {
+      "key": "thu",
+      "label": "Donnerstag",
+      "shortLabel": "Do",
+      "closed": false,
+      "slots": [{ "open": "09:00", "close": "22:00" }]
+    },
+    {
+      "key": "fri",
+      "label": "Freitag",
+      "shortLabel": "Fr",
+      "closed": false,
+      "slots": [{ "open": "09:00", "close": "23:00" }]
+    },
+    {
+      "key": "sat",
+      "label": "Samstag",
+      "shortLabel": "Sa",
+      "closed": false,
+      "slots": [{ "open": "09:00", "close": "23:00" }]
+    },
+    {
+      "key": "sun",
+      "label": "Sonntag",
+      "shortLabel": "So",
+      "closed": false,
+      "slots": [{ "open": "09:00", "close": "21:30" }]
+    }
+  ],
+  "note": "Zeiten laut öffentlichen Verzeichnissen, ohne Gewähr. Bitte vor dem Livegang bestätigen. An Feiertagen können abweichende Zeiten gelten."
+}

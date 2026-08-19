@@ -1,0 +1,35 @@
+{
+  "eyebrow": "Bewertungen",
+  "title": "Was Gäste zurückmelden",
+  "intro": "Die Bewertung stammt aus öffentlichen Gästebewertungen und wird hier nur zusammengefasst wiedergegeben.",
+  "rating": {
+    "value": 3.9,
+    "max": 5,
+    "count": 231,
+    "source": "Google",
+    "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Gleis%201%20Kebab%20Take%20away%2C%20Poststrasse%207%2C%204410%20Liestal",
+    "asOf": "Stand: öffentliche Verzeichnisse, noch nicht bestätigt"
+  },
+  "themes": [
+    {
+      "id": "r1",
+      "icon": "leaf",
+      "label": "Frisches Gemüse",
+      "text": "In Rückmeldungen häufig genannt: knackiges, frisches Gemüse."
+    },
+    {
+      "id": "r2",
+      "icon": "flame",
+      "label": "Würziges Fleisch",
+      "text": "Der Geschmack vom Drehspiess wird regelmässig positiv erwähnt."
+    },
+    {
+      "id": "r3",
+      "icon": "train",
+      "label": "Lage am Bahnhof",
+      "text": "Die direkte Nähe zum Bahnhof Liestal wird als grosser Vorteil genannt."
+    }
+  ],
+  "quotes": [],
+  "quotesPlaceholder": "Sobald Sie einzelne Bewertungen freigeben möchten, werden sie hier als Zitate angezeigt."
+}
