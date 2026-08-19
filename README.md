@@ -57,26 +57,17 @@ Adresse und die echte Telefonnummer eines bestehenden Betriebs, während Preise
 und Öffnungszeiten noch nicht bestätigt sind. Eine indexierte Testkopie würde
 den echten Auftritt konkurrenzieren und Gäste in die Irre führen.
 
-Neu veröffentlichen:
+Sie wird **automatisch** neu gebaut und veröffentlicht, sobald etwas nach
+`main` gepusht wird — siehe [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml).
+Der Workflow prüft dabei zusätzlich die Typen und lässt den
+Öffnungszeiten-Selbsttest laufen; schlägt eines davon fehl, wird nicht
+veröffentlicht.
+
+Falls einmal von Hand veröffentlicht werden muss (z. B. ohne Actions):
 
 ```bash
 npm run deploy
 ```
-
-Das Skript baut die Seite statisch (`GITHUB_PAGES=true`) und schiebt das
-Ergebnis in den Zweig `gh-pages`.
-
-> **Warum kein CI?** Unter `.github/workflows/deploy.yml` liegt ein fertiger
-> GitHub-Actions-Workflow, der bei jedem Push nach `main` automatisch baut und
-> veröffentlicht. Er ist **nicht** auf GitHub, weil dem Token die Berechtigung
-> `workflow` fehlt. Zum Aktivieren einmalig:
->
-> ```bash
-> gh auth refresh -s workflow
-> ```
->
-> Danach `git add .github && git commit -m "CI" && git push` — ab dann läuft
-> das Deployment automatisch und `npm run deploy` wird überflüssig.
 
 ---
 
