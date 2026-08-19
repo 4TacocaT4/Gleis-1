@@ -5,6 +5,10 @@ export const alt = "Gleis 1 – Kebab & Take Away in Liestal";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Beim statischen Export (GitHub Pages) muss das Bild einmal beim Build
+// erzeugt werden — ohne diese Angabe bricht `next build` ab.
+export const dynamic = "force-static";
+
 /**
  * Vorschaubild für WhatsApp, Instagram und Google.
  *
