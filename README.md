@@ -35,6 +35,7 @@ Die Seite läuft dann auf <http://localhost:3000>.
 | `npm start` | Produktions-Build lokal starten |
 | `npm run typecheck` | TypeScript prüfen |
 | `npm run check:hours` | Selbsttest der Öffnungszeiten-Logik |
+| `npm run deploy` | Testfassung auf GitHub Pages veröffentlichen |
 
 > **Wichtig:** `npm run build` nicht starten, solange `npm run dev` läuft.
 > Beide schreiben in denselben Ordner `.next`, und der Build überschreibt die
@@ -43,6 +44,39 @@ Die Seite läuft dann auf <http://localhost:3000>.
 >
 > **Behebung:** Dev-Server stoppen (Strg + C), Ordner `.next` löschen,
 > `npm run dev` neu starten.
+
+---
+
+## Testfassung im Netz
+
+<https://4tacocat4.github.io/Gleis-1/>
+
+Diese Fassung ist **vollständig für Suchmaschinen gesperrt** (robots.txt und
+`noindex`). Das ist Absicht: Die Seite trägt den echten Namen, die echte
+Adresse und die echte Telefonnummer eines bestehenden Betriebs, während Preise
+und Öffnungszeiten noch nicht bestätigt sind. Eine indexierte Testkopie würde
+den echten Auftritt konkurrenzieren und Gäste in die Irre führen.
+
+Neu veröffentlichen:
+
+```bash
+npm run deploy
+```
+
+Das Skript baut die Seite statisch (`GITHUB_PAGES=true`) und schiebt das
+Ergebnis in den Zweig `gh-pages`.
+
+> **Warum kein CI?** Unter `.github/workflows/deploy.yml` liegt ein fertiger
+> GitHub-Actions-Workflow, der bei jedem Push nach `main` automatisch baut und
+> veröffentlicht. Er ist **nicht** auf GitHub, weil dem Token die Berechtigung
+> `workflow` fehlt. Zum Aktivieren einmalig:
+>
+> ```bash
+> gh auth refresh -s workflow
+> ```
+>
+> Danach `git add .github && git commit -m "CI" && git push` — ab dann läuft
+> das Deployment automatisch und `npm run deploy` wird überflüssig.
 
 ---
 

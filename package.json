@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "check:hours": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-hours.mts"
+    "check:hours": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-hours.mts",
+    "deploy": "node scripts/deploy-pages.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
