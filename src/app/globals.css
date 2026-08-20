@@ -61,9 +61,10 @@
   --color-success: #15803d;
 
   /* --- Schriften ------------------------------------------------ */
-  /* Playfair Display SC (Kapitälchen) für Überschriften und
-     Kartenkategorien, Karla für Fliesstext und Beschreibungen. */
-  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  /* Fraunces für Überschriften, Karla für Fliesstext. Fraunces bewusst statt
+     einer Didone wie Playfair: geringer Strichkontrast, dadurch auch bei
+     15 px auf dem Handy noch klar lesbar. */
+  --font-display: var(--font-display-family), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-karla), "Helvetica Neue", Arial, sans-serif;
 
   /* --- Radien und Bewegung -------------------------------------- */

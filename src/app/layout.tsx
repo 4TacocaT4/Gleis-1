@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Karla, Playfair_Display_SC } from "next/font/google";
+import { Fraunces, Karla } from "next/font/google";
 
 import "./globals.css";
 
@@ -10,16 +10,21 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { getHours, getPages, getSite } from "@/lib/content";
 
 /**
- * Schriftpaar "Restaurant Menu": Playfair Display SC (Kapitälchen) für
- * Überschriften und Kartenkategorien, Karla für Fliesstext. Beide werden von
- * next/font beim Build heruntergeladen und selbst ausgeliefert — kein
+ * Schriftpaar: Fraunces für Überschriften, Karla für Fliesstext. Beide werden
+ * von next/font beim Build heruntergeladen und selbst ausgeliefert — kein
  * externer Font-Request zur Laufzeit, das spart Ladezeit und Cookie-Fragen.
+ *
+ * Vorher stand hier Playfair Display SC. Die Schrift sieht gross gesetzt
+ * prächtig aus, hat aber sehr dünne Haarstriche: Bei den 15 px, mit denen
+ * Gerichtnamen und Kartentitel auf dem Handy gesetzt sind, fallen die unter
+ * einen Pixel und verwaschen zu Grau. Fraunces hat deutlich weniger
+ * Strichkontrast, bleibt dadurch auch klein lesbar und behält trotzdem
+ * Charakter — sie ist warm und passt zu Street Food.
  */
-const playfair = Playfair_Display_SC({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "700"],
   display: "swap",
-  variable: "--font-playfair",
+  variable: "--font-display-family",
 });
 
 const karla = Karla({
@@ -88,7 +93,7 @@ export default async function RootLayout({
   const [site, hours, pages] = await Promise.all([getSite(), getHours(), getPages()]);
 
   return (
-    <html lang="de-CH" className={`${playfair.variable} ${karla.variable}`}>
+    <html lang="de-CH" className={`${fraunces.variable} ${karla.variable}`}>
       <head>
         {/* Ohne JavaScript bleiben alle Inhalte sichtbar. */}
         <noscript>

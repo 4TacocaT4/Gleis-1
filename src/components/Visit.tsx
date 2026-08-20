@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "./Icon";
 import { OpenStatus } from "./OpenStatus";
 import { OpeningHoursTable } from "./OpeningHoursTable";
@@ -88,36 +89,63 @@ export function Visit({ content, site, hours }: VisitProps) {
               </div>
             </div>
 
-            {/* Karte: gestalteter Platzhalter, verlinkt auf Google Maps.
-                Keine externen Skripte, dadurch kein Ladeverlust und keine
-                Cookie-Zustimmung nötig. */}
+            {/* Karte: fertiges Bild aus OpenStreetMap-Kacheln, erzeugt von
+                scripts/build-map.mjs. Bewusst keine eingebettete Live-Karte —
+                die würde bei jedem Aufruf von fremden Servern nachladen,
+                Cookies setzen und Ladezeit kosten. So bleibt die Seite frei
+                von externen Requests. */}
             <a
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative mt-7 block overflow-hidden rounded-xl border-2 border-border transition-colors duration-200 hover:border-primary"
-              style={{ aspectRatio: "16 / 7" }}
+              // Auf dem Handy höher: Bei 16:7 blieben von 120 px Höhe nach dem
+              // Beschriftungsbalken nur rund 76 px Karte übrig.
+              className="group relative mt-7 block aspect-[3/2] overflow-hidden rounded-xl border-2 border-border transition-colors duration-200 hover:border-primary sm:aspect-[16/7]"
             >
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-muted"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(220,38,38,0.09) 2px, transparent 2px), linear-gradient(90deg, rgba(220,38,38,0.09) 2px, transparent 2px)",
-                  backgroundSize: "40px 40px",
-                }}
+              <Image
+                src="/images/karte-liestal.webp"
+                alt={`Kartenausschnitt: ${site.name} an der ${address.street} in ${address.city}, direkt beim Bahnhof`}
+                fill
+                sizes="(min-width: 1024px) 640px, 92vw"
+                className="object-cover transition-transform duration-500 ease-[var(--ease-out-soft)] group-hover:scale-[1.03]"
               />
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 text-center">
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-primary text-on-primary shadow-lg">
-                  <Icon name="pin" size={24} />
+              {/* Aufruf unten aufgesetzt: Die Karte bleibt sichtbar, der
+                  Hinweis liegt nur auf einem abgedunkelten Streifen. */}
+              <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-foreground px-4 py-3">
+                {/* Auf dem Handy nur die Strasse — die volle Adresse bricht dort
+                    auf zwei Zeilen um und macht den Balken unnötig hoch. Sie
+                    steht ohnehin direkt darüber in der Karte. */}
+                <span className="inline-flex min-w-0 items-center gap-2 text-sm font-bold text-background">
+                  <Icon name="pin" size={18} />
+                  <span className="truncate">
+                    {address.street}
+                    <span className="hidden sm:inline">
+                      , {address.zip} {address.city}
+                    </span>
+                  </span>
                 </span>
-                <span className="inline-flex items-center gap-1.5 font-bold text-foreground">
-                  In Google Maps öffnen
+                <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-bold text-background">
+                  <span className="hidden sm:inline">In Google Maps öffnen</span>
+                  <span className="sm:hidden">Karte</span>
                   <Icon name="external" size={16} />
                 </span>
               </div>
             </a>
+
+            {/* Die ODbL-Lizenz von OpenStreetMap verlangt diese Nennung. */}
+            <p className="mt-2 text-xs text-muted-foreground">
+              Kartendaten ©{" "}
+              <a
+                href="https://www.openstreetmap.org/copyright"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 transition-colors duration-200 hover:text-primary-text"
+              >
+                OpenStreetMap
+              </a>
+              -Mitwirkende
+            </p>
 
             <dl className="mt-7 grid gap-x-6 gap-y-4 border-t-2 border-border pt-6 sm:grid-cols-2">
               {content.infos.map((info) => (

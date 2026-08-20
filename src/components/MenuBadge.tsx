@@ -10,7 +10,7 @@ import type { ItemBadge } from "@/lib/types";
 const STYLES: Record<ItemBadge, string> = {
   vegetarisch: "border-success/35 bg-success/10 text-success",
   vegan: "border-success/35 bg-success/10 text-success",
-  scharf: "border-primary/35 bg-primary/10 text-primary",
+  scharf: "border-primary/35 bg-primary/10 text-primary-text",
   neu: "border-accent/40 bg-accent/10 text-accent-text",
   beliebt: "border-accent/40 bg-accent/10 text-accent-text",
   hausgemacht: "border-border bg-muted text-muted-foreground",

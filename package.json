@@ -10,7 +10,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "check:hours": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-hours.mts",
-    "deploy": "node scripts/deploy-pages.mjs"
+    "deploy": "node scripts/deploy-pages.mjs",
+    "build:map": "node scripts/build-map.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
