@@ -1,109 +1,316 @@
 {
   "currency": "CHF",
-  "priceNotice": "Die Preise sind noch nicht hinterlegt. Alle angezeigten Beträge sind Platzhalter.",
-  "note": "Angaben zu Allergenen und Zusatzstoffen erhalten Sie gerne im Lokal oder telefonisch.",
+  "note": "Saucen zur Auswahl: französisch, italienisch und hausgemachte Joghurt-Sauce. Preise in Schweizer Franken, inklusive MwSt.",
   "categories": [
     {
       "id": "kebab",
-      "name": "Kebab",
-      "description": "Vom Drehspiess – im Brot, gerollt oder als Teller.",
+      "name": "Kebab & Dürüm",
+      "description": "Vom Drehspiess, mit Salat und Sauce",
       "items": [
         {
-          "id": "doener-brot",
-          "name": "Döner im Brot",
-          "description": "Der Klassiker im Fladenbrot, mit Salat und Sauce nach Wahl.",
-          "price": 12.5,
-          "badges": ["beliebt"],
+          "id": "doener-kebab",
+          "name": "Döner Kebab",
+          "description": "Im Fladenbrot, mit Salat und Sauce.",
+          "price": 11,
+          "badges": [
+            "beliebt"
+          ],
           "featured": true,
-          "available": true,
-          "image": {
-            "src": "",
-            "alt": "Döner im Fladenbrot",
-            "placeholderLabel": "Döner im Brot"
-          }
-        },
-        {
-          "id": "duerueum",
-          "name": "Dürüm",
-          "description": "Im dünnen Fladen gerollt, mit Salat und Sauce nach Wahl.",
-          "price": 13.5,
-          "badges": [],
-          "featured": true,
-          "available": true,
-          "image": {
-            "src": "",
-            "alt": "Dürüm gerollt",
-            "placeholderLabel": "Dürüm"
-          }
-        },
-        {
-          "id": "kebab-teller",
-          "name": "Kebab Teller",
-          "description": "Grosse Portion mit Beilage, Salat und Sauce.",
-          "price": 21.5,
-          "badges": ["beliebt"],
-          "featured": true,
-          "available": true,
-          "image": {
-            "src": "",
-            "alt": "Kebab Teller mit Beilagen",
-            "placeholderLabel": "Kebab Teller"
-          }
-        },
-        {
-          "id": "kebab-box",
-          "name": "Kebab Box",
-          "description": "Handliche Box mit Pommes, Fleisch und Sauce.",
-          "price": 12.0,
-          "badges": [],
           "available": true,
           "image": null
         },
         {
-          "id": "kebab-klein",
-          "name": "Kleiner Kebab",
-          "description": "Kleinere Portion im Brot.",
-          "price": 9.5,
-          "badges": [],
+          "id": "duerum-kebab",
+          "name": "Dürüm Kebab",
+          "description": "Im dünnen Fladenbrot gerollt, mit Salat und Sauce.",
+          "price": 12,
+          "badges": [
+            "beliebt"
+          ],
+          "featured": true,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "doener-gyros",
+          "name": "Döner Gyros",
+          "description": "Mit Pommes, Salat und Sauce.",
+          "price": 12,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "duerum-gyros",
+          "name": "Dürüm Gyros",
+          "description": "Gerollt, mit Pommes, Salat und Sauce.",
+          "price": 13,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "doener-box",
+          "name": "Döner Box",
+          "description": "Mit Pommes, Salat und Sauce.",
+          "price": 10,
+          "variants": [
+            {
+              "label": "Klein",
+              "price": 10
+            },
+            {
+              "label": "Gross",
+              "price": 12
+            }
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "doener-teller",
+          "name": "Döner Teller",
+          "description": "Mit Pommes, Salat und Sauce.",
+          "price": 18,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "vegi-duerum",
+          "name": "Vegi Dürüm",
+          "description": "Gerollt, mit frischem Salat und Sauce.",
+          "price": 13,
+          "badges": [
+            "vegetarisch"
+          ],
           "available": true,
           "image": null
         }
       ]
     },
     {
-      "id": "spezialitaeten",
-      "name": "Spezialitäten",
-      "description": "Was es nicht überall gibt.",
+      "id": "lahmacun-pide",
+      "name": "Lahmacun & Pide",
+      "description": "Frisch aus dem Ofen",
       "items": [
         {
-          "id": "pepito",
-          "name": "Pepito",
-          "description": "Poulet vom Grill mit frischem Gemüse – unsere Hausspezialität.",
-          "price": 15.5,
-          "badges": ["hausgemacht"],
-          "featured": true,
-          "available": true,
-          "image": {
-            "src": "",
-            "alt": "Pepito mit Poulet und frischem Gemüse",
-            "placeholderLabel": "Pepito"
-          }
-        },
-        {
-          "id": "lahmacun",
-          "name": "Lahmacun",
-          "description": "Dünner Teigfladen aus dem Ofen, zum Rollen.",
-          "price": 9.5,
-          "badges": [],
+          "id": "lahmacun-salat",
+          "name": "Lahmacun mit Salat",
+          "description": "Mit Rindfleisch belegt, dazu frischer Salat.",
+          "price": 11,
           "available": true,
           "image": null
         },
         {
-          "id": "lahmacun-belegt",
-          "name": "Lahmacun belegt",
-          "description": "Mit Salat und Sauce gefüllt und gerollt.",
-          "price": 13.5,
-          "badges": [],
+          "id": "lahmacun-kebab",
+          "name": "Lahmacun mit Kebabfleisch",
+          "description": "Mit Rindfleisch, Kebabfleisch und Salat.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pide-kaese",
+          "name": "Pide Käse",
+          "description": "Mit Schafskäse und Mozzarella.",
+          "price": 13,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pide-spinat",
+          "name": "Pide Spinat",
+          "description": "Mit Schafskäse und Spinat.",
+          "price": 14,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pide-kebab",
+          "name": "Pide Kebabfleisch",
+          "description": "Mit Schafskäse, Mozzarella und Kebabfleisch.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pide-vegi",
+          "name": "Pide Vegi",
+          "description": "Mit Oliven, Zwiebeln, Artischocken und frischen Tomaten.",
+          "price": 15,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pide-sucuk",
+          "name": "Pide Sucuk",
+          "description": "Mit türkischer Knoblauchwurst.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pide-ei",
+          "name": "Pide zusätzlich mit Ei",
+          "description": "Aufpreis für ein Ei auf der Pide.",
+          "price": 1,
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "burger-snacks",
+      "name": "Burger & Snacks",
+      "description": "Vom Grill und aus der Fritteuse",
+      "items": [
+        {
+          "id": "pepito",
+          "name": "Pepito",
+          "description": "Im länglichen Brot, mit diversen Salaten und Saucen.",
+          "price": 11,
+          "badges": [
+            "hausgemacht"
+          ],
+          "featured": true,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "hamburger",
+          "name": "Hamburger",
+          "description": "Mit Rindfleisch-Patty, Salat und Sauce.",
+          "price": 10,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "cheeseburger",
+          "name": "Cheeseburger",
+          "description": "Mit Rindfleisch-Patty, Käse, Salat und Sauce.",
+          "price": 11,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "chickenburger",
+          "name": "Chickenburger",
+          "description": "Mit knusprigem Pouletfleisch, Salat und Sauce.",
+          "price": 11,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "chicken-box",
+          "name": "Chicken Box",
+          "description": "Knuspriges Pouletfleisch zum Mitnehmen.",
+          "price": 11,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "schnitzelbrot",
+          "name": "Schnitzelbrot",
+          "description": "Mit diversen Salaten und Sauce.",
+          "price": 11,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "chicken-nuggets",
+          "name": "Chicken Nuggets",
+          "description": "6 Stück.",
+          "price": 7,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "hot-dog",
+          "name": "Hot Dog",
+          "description": "Klassisch im Brot.",
+          "price": 6,
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "falafel",
+      "name": "Falafel",
+      "description": "Vegetarisch, frisch frittiert",
+      "items": [
+        {
+          "id": "falafel-taschenbrot",
+          "name": "Falafel im Taschenbrot",
+          "description": "Mit Salat und Sauce.",
+          "price": 11,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null,
+          "featured": true
+        },
+        {
+          "id": "falafel-fladenbrot",
+          "name": "Falafel im Fladenbrot",
+          "description": "Mit Salat und Sauce.",
+          "price": 11,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "falafel-box",
+          "name": "Falafel Box",
+          "description": "Mit Pommes.",
+          "price": 12,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "teller",
+      "name": "Vom Teller",
+      "description": "Mit Pommes serviert",
+      "items": [
+        {
+          "id": "calamares",
+          "name": "Calamares",
+          "description": "Mit Pommes.",
+          "price": 18,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "fischknusperli",
+          "name": "Fischknusperli",
+          "description": "Mit Pommes.",
+          "price": 18,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pommes",
+          "name": "Pommes",
+          "description": "Portion Pommes frites.",
+          "price": 7,
+          "badges": [
+            "vegetarisch"
+          ],
           "available": true,
           "image": null
         }
@@ -112,114 +319,444 @@
     {
       "id": "pizza",
       "name": "Pizza",
-      "description": "Frisch aus dem Ofen.",
+      "description": "Alle Pizzas mit Tomaten, Mozzarella und Oregano",
       "items": [
         {
-          "id": "pizza-sorte",
-          "name": "Pizza",
-          "description": "Sorte nach Wahl. Die vollständige Sortenliste folgt.",
-          "price": 16.5,
-          "badges": [],
-          "featured": true,
-          "available": true,
-          "image": {
-            "src": "",
-            "alt": "Pizza aus dem Ofen",
-            "placeholderLabel": "Pizza"
-          }
-        },
-        {
-          "id": "pizza-vegetarisch",
-          "name": "Pizza vegetarisch",
-          "description": "Ohne Fleisch, Sorte nach Wahl.",
-          "price": 16.5,
-          "badges": ["vegetarisch"],
-          "available": true,
-          "image": null
-        }
-      ]
-    },
-    {
-      "id": "vegetarisch",
-      "name": "Vegetarisch",
-      "description": "Ohne Fleisch, mit Falafel.",
-      "items": [
-        {
-          "id": "falafel-brot",
-          "name": "Falafel im Brot",
-          "description": "Falafel mit Salat und Sauce im Fladenbrot.",
-          "price": 11.5,
-          "badges": ["vegetarisch"],
-          "featured": true,
-          "available": true,
-          "image": {
-            "src": "",
-            "alt": "Falafel im Fladenbrot",
-            "placeholderLabel": "Falafel"
-          }
-        },
-        {
-          "id": "falafel-duerueum",
-          "name": "Falafel Dürüm",
-          "description": "Falafel gerollt, mit Salat und Sauce.",
-          "price": 12.5,
-          "badges": ["vegetarisch"],
-          "available": true,
-          "image": null
-        },
-        {
-          "id": "falafel-teller",
-          "name": "Falafel Teller",
-          "description": "Falafel mit Beilage und Salat.",
-          "price": 19.5,
-          "badges": ["vegetarisch"],
-          "available": true,
-          "image": null
-        }
-      ]
-    },
-    {
-      "id": "beilagen",
-      "name": "Salate & Beilagen",
-      "description": "Passt zu allem.",
-      "items": [
-        {
-          "id": "salat-gross",
-          "name": "Grosser Salat",
-          "description": "Gemischter Salat mit Dressing nach Wahl.",
-          "price": 13.5,
-          "badges": ["vegetarisch"],
-          "available": true,
-          "image": null
-        },
-        {
-          "id": "salat-klein",
-          "name": "Beilagensalat",
-          "description": "Kleine Portion gemischter Salat.",
-          "price": 6.0,
-          "badges": ["vegetarisch"],
-          "available": true,
-          "image": null
-        },
-        {
-          "id": "pommes",
-          "name": "Pommes",
-          "description": "Frittiert, mit Sauce nach Wahl.",
-          "price": 6.5,
-          "variants": [
-            { "label": "Klein", "price": 6.5 },
-            { "label": "Gross", "price": 8.5 }
+          "id": "pizza-01-margherita",
+          "name": "01 Margherita",
+          "description": "Tomaten, Mozzarella, Oregano.",
+          "price": 13,
+          "badges": [
+            "vegetarisch"
           ],
-          "badges": ["vegetarisch"],
           "available": true,
           "image": null
         },
         {
-          "id": "sauce-extra",
-          "name": "Extra Sauce",
-          "description": "Zusätzliche Portion Sauce.",
-          "price": 1.5,
-          "badges": [],
+          "id": "pizza-02-funghi",
+          "name": "02 Funghi",
+          "description": "Tomaten, Mozzarella, Champignons, Oregano.",
+          "price": 14,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-03-pazza",
+          "name": "03 Pazza",
+          "description": "Tomaten, Mozzarella, Knoblauch, Zwiebeln, Oregano.",
+          "price": 14,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-04-prosciutto",
+          "name": "04 Prosciutto",
+          "description": "Tomaten, Mozzarella, Vorderschinken, Oregano.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-05-prosciutto-funghi",
+          "name": "05 Prosciutto e Funghi",
+          "description": "Tomaten, Mozzarella, Vorderschinken, Champignons, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-06-salami",
+          "name": "06 Salami",
+          "description": "Tomaten, Mozzarella, Salami, Oregano.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-07-alla-diavola",
+          "name": "07 Alla Diavola",
+          "description": "Tomaten, Mozzarella, Salami, Peperoni, Oregano.",
+          "price": 15,
+          "badges": [
+            "scharf"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-08-pollo",
+          "name": "08 Pollo",
+          "description": "Tomaten, Mozzarella, Ananas, Pouletfleisch, Curry, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-09-napoli",
+          "name": "09 Napoli",
+          "description": "Tomaten, Mozzarella, Sardellen, Kapern, Oliven, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-10-contantina",
+          "name": "10 Contantina",
+          "description": "Tomaten, Mozzarella, Speck, Zwiebeln, Oregano.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-11-romana",
+          "name": "11 Romana",
+          "description": "Tomaten, Mozzarella, Artischocken, Oliven, Kapern, Oregano.",
+          "price": 15,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-12-spinaci-funghi",
+          "name": "12 Spinaci e Funghi",
+          "description": "Tomaten, Mozzarella, Spinat, Champignons, Oregano.",
+          "price": 15,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-13-fiorentina",
+          "name": "13 Fiorentina",
+          "description": "Tomaten, Mozzarella, Spinat, Speck, Oregano.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-14-hawaii",
+          "name": "14 Hawaii",
+          "description": "Tomaten, Mozzarella, Vorderschinken, Ananas, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-15-vegetariana",
+          "name": "15 Vegetariana",
+          "description": "Tomaten, Mozzarella, Auberginen, Zucchetti, Peperoni, Pilze, Oregano.",
+          "price": 16,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-16-tonno-cipolla",
+          "name": "16 Tonno e Cipolla",
+          "description": "Tomaten, Mozzarella, Thon, Zwiebeln, Oregano.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-17-tonno-spinaci",
+          "name": "17 Tonno e Spinaci",
+          "description": "Tomaten, Mozzarella, Thon, Spinat, Zwiebeln, Oregano.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-18-gorgonzola",
+          "name": "18 Gorgonzola",
+          "description": "Tomaten, Mozzarella, Gorgonzola, Oregano.",
+          "price": 15,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-19-quattro-formaggi",
+          "name": "19 Quattro Formaggi",
+          "description": "Tomaten, Mozzarella, Gorgonzola, Parmesan, Gruyère, Oregano.",
+          "price": 16,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-20-o-solo-mio",
+          "name": "20 O Solo Mio",
+          "description": "Tomaten, Mozzarella, Vorderschinken, Ei, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-21-mare-e-monti",
+          "name": "21 Mare e Monti",
+          "description": "Tomaten, Mozzarella, Crevetten, Artischocken, Pilze, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-22-quattro-stagioni",
+          "name": "22 Quattro Stagioni",
+          "description": "Tomaten, Mozzarella, Vorderschinken, Artischocken, Pilze, Oliven, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-23-kebab",
+          "name": "23 Kebab",
+          "description": "Tomaten, Mozzarella, Kebabfleisch, Oregano.",
+          "price": 17,
+          "badges": [
+            "beliebt"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-24-sucuk",
+          "name": "24 Sucuk",
+          "description": "Tomaten, Mozzarella, Sucuk, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-25-calzone",
+          "name": "25 Calzone",
+          "description": "Tomaten, Mozzarella, Vorderschinken, Ei, Pilze, Oregano.",
+          "price": 15,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-26-ai-gamberetti",
+          "name": "26 Ai Gamberetti",
+          "description": "Tomaten, Mozzarella, Crevetten, Peperoni, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-27-tropikal",
+          "name": "27 Tropikal",
+          "description": "Tomaten, Mozzarella, Ananas, Oregano.",
+          "price": 15,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-28-pommes",
+          "name": "28 Pommes",
+          "description": "Tomaten, Mozzarella, Pommes, Oregano.",
+          "price": 16,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-29-liestal",
+          "name": "29 Liestal",
+          "description": "Tomaten, Mozzarella, Pouletfleisch, Pilze, Zwiebeln, Oregano.",
+          "price": 16,
+          "badges": [
+            "hausgemacht"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-30-grandiosa",
+          "name": "30 Grandiosa",
+          "description": "Tomaten, Mozzarella, Zwiebeln, Oliven, Schafskäse, Oregano.",
+          "price": 15,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-31-frutti-di-mare",
+          "name": "31 Frutti di Mare",
+          "description": "Tomaten, Mozzarella, Meeresfrüchte, Knoblauch, Oregano.",
+          "price": 16,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-32-wunsch",
+          "name": "32 Wunsch-Pizza",
+          "description": "Fünf Zutaten nach Wahl.",
+          "price": 19,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-33-gemischt",
+          "name": "33 Gemischt",
+          "description": "Tomaten, Mozzarella, Salami, Vorderschinken, Pilze, Peperoni, Oregano.",
+          "price": 17,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pizza-zutat",
+          "name": "Jede weitere Zutat",
+          "description": "Aufpreis pro zusätzlicher Zutat.",
+          "price": 1,
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "menues",
+      "name": "Menüs mit Getränk",
+      "description": "Inklusive Getränk 5 dl (PET)",
+      "items": [
+        {
+          "id": "menue-hamburger",
+          "name": "Hamburger",
+          "description": "Mit Rindfleisch, dazu ein Getränk 5 dl (PET).",
+          "price": 12.5,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "menue-pepito",
+          "name": "Pepito",
+          "description": "Mit diversen Salaten und Saucen, dazu ein Getränk 5 dl (PET).",
+          "price": 13,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "menue-chicken-nuggets",
+          "name": "Chicken Nuggets mit Pommes",
+          "description": "Dazu ein Getränk 5 dl (PET).",
+          "price": 17,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "menue-schnitzel",
+          "name": "Schnitzel mit Pommes und Salat",
+          "description": "Poulet oder Schweinefleisch, dazu ein Getränk 5 dl (PET).",
+          "price": 17,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "menue-lahmacun",
+          "name": "Lahmacun",
+          "description": "Dazu ein Getränk 5 dl (PET).",
+          "price": 14,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "menue-falafel",
+          "name": "Falafel",
+          "description": "Dazu ein Getränk 5 dl (PET).",
+          "price": 13.5,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "menue-vegi-duerum",
+          "name": "Vegi Dürüm",
+          "description": "Dazu ein Getränk 5 dl (PET).",
+          "price": 13,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "menue-schueler-pizza",
+          "name": "Schüler Pizza",
+          "description": "Mit Dosengetränk 0.33 l.",
+          "price": 12,
+          "available": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "salate",
+      "name": "Salate",
+      "description": "Frisch zubereitet",
+      "items": [
+        {
+          "id": "salat-gemischt",
+          "name": "Gemischter Salat",
+          "description": "Bunt gemischt, mit Sauce nach Wahl.",
+          "price": 9,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "salat-gemischt-schafskaese",
+          "name": "Gemischter Salat mit Schafskäse",
+          "description": "Bunt gemischt, mit Schafskäse.",
+          "price": 10,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "salat-gruen",
+          "name": "Grüner Salat",
+          "description": "Blattsalat mit Sauce nach Wahl.",
+          "price": 6,
+          "badges": [
+            "vegetarisch"
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "salat-thon",
+          "name": "Thonsalat",
+          "description": "Gemischter Salat mit Thon.",
+          "price": 12,
           "available": true,
           "image": null
         }
@@ -228,36 +765,87 @@
     {
       "id": "getraenke",
       "name": "Getränke",
-      "description": "Kalt und erfrischend.",
+      "description": "Kalt und warm",
       "items": [
         {
-          "id": "softdrink",
-          "name": "Softdrink",
-          "description": "Auswahl an alkoholfreien Getränken.",
+          "id": "coffee-to-go",
+          "name": "Coffee To Go",
+          "description": "Kaffee zum Mitnehmen.",
           "price": 3.5,
-          "variants": [
-            { "label": "3 dl", "price": 3.5 },
-            { "label": "5 dl", "price": 4.5 }
-          ],
-          "badges": [],
           "available": true,
           "image": null
         },
         {
-          "id": "wasser",
-          "name": "Mineralwasser",
-          "description": "Mit oder ohne Kohlensäure.",
-          "price": 3.0,
-          "badges": [],
+          "id": "kaffee",
+          "name": "Kaffee",
+          "description": "Aus der Tasse, vor Ort.",
+          "price": 3.5,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "glas-tee",
+          "name": "Glas Tee",
+          "description": "Türkischer Tee im Glas.",
+          "price": 3,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "pet-flasche",
+          "name": "Getränke in PET-Flaschen",
+          "description": "5 dl, verschiedene Sorten.",
+          "price": 3.5,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "dosen",
+          "name": "Dosen",
+          "description": "3,3 dl, verschiedene Sorten.",
+          "price": 3,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "red-bull",
+          "name": "Red Bull",
+          "description": "2,5 dl.",
+          "price": 4,
           "available": true,
           "image": null
         },
         {
           "id": "ayran",
           "name": "Ayran",
-          "description": "Klassisches Joghurtgetränk.",
+          "description": "3,3 dl, klassisches Joghurtgetränk.",
+          "price": 3,
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "bier",
+          "name": "Bier",
+          "description": "Vom Kühlschrank, in zwei Grössen.",
           "price": 3.5,
-          "badges": [],
+          "variants": [
+            {
+              "label": "3,3 dl",
+              "price": 3.5
+            },
+            {
+              "label": "5 dl",
+              "price": 4
+            }
+          ],
+          "available": true,
+          "image": null
+        },
+        {
+          "id": "smirnoff",
+          "name": "Smirnoff",
+          "description": "2,75 dl.",
+          "price": 5,
           "available": true,
           "image": null
         }

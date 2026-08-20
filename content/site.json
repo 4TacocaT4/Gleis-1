@@ -4,7 +4,12 @@
   "tagline": "Kebab & Take Away",
   "locality": "Liestal",
   "priceRange": "CHF",
-  "cuisine": ["Kebab", "Türkisch", "Pizza", "Street Food"],
+  "cuisine": [
+    "Kebab",
+    "Türkisch",
+    "Pizza",
+    "Street Food"
+  ],
   "address": {
     "street": "Poststrasse 7",
     "zip": "4410",
@@ -49,5 +54,5 @@
     "station": "Direkt beim Bahnhof Liestal"
   },
   "demoMode": true,
-  "demoNotice": "Vorschau: Adresse, Telefon und Öffnungszeiten stammen aus öffentlichen Verzeichnissen und sind noch nicht bestätigt. Alle Preise sind Platzhalter."
+  "demoNotice": "Vorschau: Die Speisekarte stammt von der Menütafel im Lokal (Stand August 2026). Adresse, Telefon und Öffnungszeiten sind aus öffentlichen Verzeichnissen übernommen und noch nicht bestätigt."
 }

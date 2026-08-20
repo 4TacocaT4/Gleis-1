@@ -11,7 +11,7 @@ etwas ändert, ändert die Seite — Programmierkenntnisse sind dafür nicht nö
 | --- | --- |
 | `site.json` | Name, Adresse, Telefon, E-Mail, Social Media, Suchmaschinen-Texte, Demo-Hinweis |
 | `pages.json` | Alle Texte der Startseite: Hero, Highlights, Über uns, Besuch, Footer |
-| `menu.json` | Die komplette Speisekarte: Kategorien, Gerichte, Preise, Kennzeichnungen, Preishinweis |
+| `menu.json` | Die komplette Speisekarte: Kategorien, Gerichte, Preise, Kennzeichnungen |
 | `hours.json` | Öffnungszeiten |
 | `reviews.json` | Bewertungen: Gesamtnote mit Quelle und echte Zitate |
 | `legal.json` | Impressum und Datenschutz |
@@ -28,7 +28,7 @@ Diese Punkte sollten vor dem Livegang ersetzt sein:
 Adresse, Telefon und Gerichtsnamen stammen aus öffentlichen Verzeichnissen.
 Sie sind als Ausgangspunkt gedacht und gehören vor dem Livegang bestätigt.
 
-1. **`menu.json`** → echte Preise eintragen, danach `priceNotice` löschen
+1. **`menu.json`** → Preise gegen die Menütafel gegenprüfen, wenn sie ändern
 2. **`hours.json`** → Öffnungszeiten bestätigen, danach `note` löschen
 3. **`site.json`** → `address`, `contact`, `seo.siteUrl` prüfen bzw. eintragen
 4. **`legal.json`** → Impressum und Datenschutz vervollständigen (bitte rechtlich prüfen lassen)
@@ -128,14 +128,19 @@ eine Abstrafung.
 
 ---
 
-## Preishinweis (`menu.json`)
+## Preise
+
+Die Preise stammen von der Menütafel im Lokal (fotografiert, Stand August 2026).
+Wenn sich etwas ändert, genügt es, die Zahl im jeweiligen Eintrag zu ersetzen.
+
+Ein optionales Feld `priceNotice` blendet bei Bedarf einen nicht wegklickbaren
+Hinweis über der Karte ein — zum Beispiel während einer Preisumstellung:
 
 ```json
-"priceNotice": "Die Preise sind noch nicht hinterlegt. Alle angezeigten Beträge sind Platzhalter."
+"priceNotice": "Die Preise werden gerade überarbeitet."
 ```
 
-Dieser Hinweis steht gut sichtbar über der Karte und lässt sich nicht
-wegklicken. Sobald die echten Preise eingetragen sind: Zeile ersatzlos löschen.
+Solange die Zeile fehlt, erscheint kein Hinweis.
 
 ---
 

@@ -6,10 +6,11 @@ mobile-first, helles Erscheinungsbild in Rot und Gold, ohne externe Dienste.
 **Status:** Website fertig. Das Admin-Panel folgt als zweiter Schritt — die
 Datenschicht ist bereits darauf vorbereitet (siehe unten).
 
-**Zum Datenstand:** Adresse, Telefonnummer, Gerichtsnamen und die
-Gesamtbewertung stammen aus öffentlichen Verzeichnissen und sind noch **nicht
-vom Betrieb bestätigt**. **Alle Preise sind Platzhalter**, und es steht kein
-einziges erfundenes Gästezitat auf der Seite. Solange `demoMode` in
+**Zum Datenstand:** Die **Speisekarte samt Preisen** stammt von der Menütafel im
+Lokal (fotografiert, Stand August 2026). Adresse, Telefonnummer, Öffnungszeiten
+und die Gesamtbewertung stammen aus öffentlichen Verzeichnissen und sind noch
+**nicht vom Betrieb bestätigt**. Es steht kein einziges erfundenes Gästezitat
+auf der Seite. Solange `demoMode` in
 `content/site.json` auf `true` steht, weist die Seite selbst sichtbar darauf
 hin. Die Checkliste vor dem Livegang steht in
 [`content/README.md`](./content/README.md).
@@ -53,8 +54,8 @@ Die Seite läuft dann auf <http://localhost:3000>.
 
 Diese Fassung ist **vollständig für Suchmaschinen gesperrt** (robots.txt und
 `noindex`). Das ist Absicht: Die Seite trägt den echten Namen, die echte
-Adresse und die echte Telefonnummer eines bestehenden Betriebs, während Preise
-und Öffnungszeiten noch nicht bestätigt sind. Eine indexierte Testkopie würde
+Adresse und die echte Telefonnummer eines bestehenden Betriebs, während die
+Öffnungszeiten noch nicht bestätigt sind. Eine indexierte Testkopie würde
 den echten Auftritt konkurrenzieren und Gäste in die Irre führen.
 
 Sie wird **automatisch** neu gebaut und veröffentlicht, sobald etwas nach
