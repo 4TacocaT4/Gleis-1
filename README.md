@@ -6,6 +6,12 @@ mobile-first, helles Erscheinungsbild in Rot und Gold, ohne externe Dienste.
 **Status:** Website fertig. Das Admin-Panel folgt als zweiter Schritt — die
 Datenschicht ist bereits darauf vorbereitet (siehe unten).
 
+> ### ⚠️ Vor dem Livegang: [OFFENE-PUNKTE.md](./OFFENE-PUNKTE.md)
+>
+> Dort stehen vier Angaben der Speisekarte, die von den Menütafeln abgelesen
+> und durch Lichtreflexe nicht gesichert sind, sowie die noch unbestätigten
+> Betriebsdaten. **Diese Liste durchgehen, bevor die Seite live geht.**
+
 **Zum Datenstand:** Die **Speisekarte samt Preisen** stammt von der Menütafel im
 Lokal (fotografiert, Stand August 2026). Adresse, Telefonnummer, Öffnungszeiten
 und die Gesamtbewertung stammen aus öffentlichen Verzeichnissen und sind noch

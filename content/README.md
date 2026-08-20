@@ -1,5 +1,9 @@
 # Inhalte bearbeiten
 
+> **Vor dem Livegang:** Die Liste in [OFFENE-PUNKTE.md](../OFFENE-PUNKTE.md)
+> durchgehen — darin stehen unter anderem vier Speisekarten-Einträge, die von
+> den Menütafeln abgelesen und nicht gesichert sind.
+
 In diesem Ordner steht **alles**, was auf der Website zu sehen ist. Wer hier
 etwas ändert, ändert die Seite — Programmierkenntnisse sind dafür nicht nötig.
 
