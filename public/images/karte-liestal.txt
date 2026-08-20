@@ -1,0 +1,4 @@
+Kartenausschnitt Poststrasse 7, 4410 Liestal
+Koordinaten: 47.4831772, 7.7335616 (Zoom 17)
+Erzeugt mit scripts/build-map.mjs
+Kartendaten © OpenStreetMap-Mitwirkende, ODbL

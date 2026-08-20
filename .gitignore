@@ -14,4 +14,7 @@ out/
 # Betriebssystem / Editor
 .DS_Store
 Thumbs.db
-Images/
+# Quellfotos der Menütafel — Arbeitsmaterial, keine Seiten-Assets.
+# Der führende Schrägstrich ist wichtig: Ohne ihn schluckt die Regel unter
+# Windows (core.ignorecase=true) auch public/images/ und damit das Kartenbild.
+/Images/
