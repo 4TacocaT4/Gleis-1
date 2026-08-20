@@ -33,10 +33,8 @@ export function MenuSection({ content, menu }: MenuSectionProps) {
             zeremoniell. */}
         <header data-reveal className="max-w-2xl">
           {content.eyebrow && <span className="eyebrow">{content.eyebrow}</span>}
-          <h2 className="section-title !text-[clamp(1.75rem,7vw,3rem)]">
-            {content.title}
-          </h2>
-          <p className="lead mt-2.5">{content.intro}</p>
+          <h2 className="section-title">{content.title}</h2>
+          <p className="lead mt-2.5 sm:mt-4">{content.intro}</p>
         </header>
 
         {/* Preishinweis bewusst nicht ausblendbar, solange die Preise nicht
@@ -44,15 +42,15 @@ export function MenuSection({ content, menu }: MenuSectionProps) {
         {menu.priceNotice && (
           <p
             data-reveal
-            className="mt-5 flex items-start gap-2 rounded-xl border-2 border-accent/30 bg-accent/[0.07] px-3.5 py-2.5 text-sm font-semibold text-accent-text"
+            className="mt-5 flex items-start gap-2 rounded-xl border-2 border-accent/30 bg-accent/[0.07] px-3.5 py-2.5 text-sm font-semibold text-accent-text sm:mt-7 sm:gap-2.5 sm:px-4 sm:py-3 sm:text-[0.9375rem]"
           >
-            <Icon name="sparkle" size={18} className="mt-0.5 shrink-0" />
+            <Icon name="sparkle" size={20} className="mt-0.5 shrink-0" />
             {menu.priceNotice}
           </p>
         )}
 
         {featured.length > 0 && (
-          <ul className="mt-7 grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+          <ul className="mt-7 grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 sm:mt-10 sm:gap-5 lg:grid-cols-4">
             {featured.map((item, index) => (
               <li
                 key={item.id}
@@ -63,7 +61,7 @@ export function MenuSection({ content, menu }: MenuSectionProps) {
                   <SmartImage
                     image={item.image}
                     ratio="4 / 3"
-                    sizes="(min-width: 1024px) 25vw, 46vw"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 46vw"
                     fallbackLabel={item.name}
                   />
 
@@ -88,12 +86,12 @@ export function MenuSection({ content, menu }: MenuSectionProps) {
         )}
 
         {/* Vollständige Karte */}
-        <div className="mt-10">
+        <div className="mt-10 sm:mt-14">
           <MenuCategoryNav
             categories={menu.categories.map(({ id, name }) => ({ id, name }))}
           />
 
-          <div className="mt-7 flex flex-col gap-8">
+          <div className="mt-7 flex flex-col gap-8 sm:mt-10 sm:gap-12">
             {menu.categories.map((category) => (
               <section
                 key={category.id}
@@ -101,7 +99,10 @@ export function MenuSection({ content, menu }: MenuSectionProps) {
                 aria-labelledby={`kategorie-${category.id}-titel`}
                 className="scroll-mt-40"
               >
-                <div data-reveal className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <div
+                  data-reveal
+                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1 sm:gap-x-4"
+                >
                   <h3
                     id={`kategorie-${category.id}-titel`}
                     className="font-display text-xl sm:text-3xl"
@@ -115,11 +116,17 @@ export function MenuSection({ content, menu }: MenuSectionProps) {
                   )}
                 </div>
 
-                <div className="rule mt-2.5" />
+                <div className="rule mt-2.5 sm:mt-4" />
 
-                <ul className="mt-3 grid grid-cols-1 gap-2.5 min-[360px]:grid-cols-2 sm:gap-x-10 lg:grid-cols-3">
+                {/* Ab 640 px wieder das ursprüngliche Raster: eine Spalte,
+                    ab 1024 px zwei — mit Punktlinien-Zeilen statt Kästchen. */}
+                <ul className="mt-3 grid grid-cols-1 gap-2.5 min-[360px]:grid-cols-2 sm:mt-1 sm:grid-cols-1 sm:gap-x-12 sm:gap-y-0 lg:grid-cols-2">
                   {category.items.map((item) => (
-                    <li key={item.id} data-reveal>
+                    <li
+                      key={item.id}
+                      data-reveal
+                      className="sm:border-b sm:border-border"
+                    >
                       <MenuRow item={item} currency={menu.currency} />
                     </li>
                   ))}
@@ -141,41 +148,52 @@ function MenuRow({ item, currency }: { item: MenuItem; currency: string }) {
   const hasVariants = Boolean(item.variants?.length);
 
   return (
-    <div className="h-full rounded-lg border border-border bg-card px-3 py-2.5 transition-colors duration-200 hover:border-primary">
-      {/* break-words als harte Absicherung: Chrome trennt lange deutsche
-          Komposita in schmalen Spalten auch mit hyphens-auto nicht zuverlässig. */}
-      <h4 className="break-words text-[0.9375rem] font-bold leading-snug hyphens-auto">
-        {item.name}
-      </h4>
+    // Auf dem Handy ein Kästchen, ab 640 px wieder die klassische Kartenzeile:
+    // kein Rahmen, dafür Punktlinie und Hover-Fläche wie ursprünglich.
+    <div className="h-full rounded-lg border border-border bg-card px-3 py-2.5 transition-colors duration-200 hover:border-primary sm:-mx-3 sm:h-auto sm:border-0 sm:bg-transparent sm:py-4 sm:hover:bg-card">
+      <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
+        {/* break-words als harte Absicherung: Chrome trennt lange deutsche
+            Komposita in schmalen Spalten auch mit hyphens-auto nicht. */}
+        <h4 className="break-words text-[0.9375rem] font-bold leading-snug hyphens-auto sm:text-[1.0625rem]">
+          {item.name}
+        </h4>
+
+        {/* Punktlinie wie auf einer klassischen Karte — auf dem Handy fehlt
+            dafür schlicht die Breite. */}
+        <span
+          aria-hidden="true"
+          className="hidden min-w-6 flex-1 translate-y-[-0.25rem] border-b-2 border-dotted border-border sm:block"
+        />
+
+        <span className="tnum mt-1.5 text-[0.9375rem] font-bold text-primary-text sm:mt-0 sm:shrink-0 sm:text-[1.0625rem]">
+          {item.price === null ? (
+            <span className="text-sm font-semibold text-muted-foreground">
+              auf Anfrage
+            </span>
+          ) : (
+            <>
+              {hasVariants && (
+                <span className="mr-1 text-xs font-semibold text-muted-foreground">
+                  ab
+                </span>
+              )}
+              <span className="mr-1 text-xs font-semibold text-muted-foreground">
+                {currency}
+              </span>
+              {formatPrice(item.price)}
+            </>
+          )}
+        </span>
+      </div>
 
       {item.description && (
-        <p className="mt-1 hidden text-[0.9375rem] leading-relaxed text-muted-foreground sm:block">
+        <p className="mt-1 hidden max-w-prose text-[0.9375rem] leading-relaxed text-muted-foreground sm:mt-1.5 sm:block">
           {item.description}
         </p>
       )}
 
-      <p className="tnum mt-1.5 text-[0.9375rem] font-bold text-primary-text">
-        {item.price === null ? (
-          <span className="text-sm font-semibold text-muted-foreground">
-            auf Anfrage
-          </span>
-        ) : (
-          <>
-            {hasVariants && (
-              <span className="mr-1 text-xs font-semibold text-muted-foreground">
-                ab
-              </span>
-            )}
-            <span className="mr-1 text-xs font-semibold text-muted-foreground">
-              {currency}
-            </span>
-            {formatPrice(item.price)}
-          </>
-        )}
-      </p>
-
-      {hasVariants && (
-        <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
+      {(hasVariants || (item.badges && item.badges.length > 0)) && (
+        <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 sm:mt-2.5 sm:gap-x-4 sm:gap-y-2">
           {item.variants?.map((variant) => (
             <span key={variant.label} className="tnum text-sm text-muted-foreground">
               {variant.label}{" "}
@@ -184,14 +202,7 @@ function MenuRow({ item, currency }: { item: MenuItem; currency: string }) {
               </span>
             </span>
           ))}
-        </div>
-      )}
-
-      {item.badges && item.badges.length > 0 && (
-        <div className="mt-1.5 flex flex-wrap gap-1.5">
-          {item.badges.map((badge) => (
-            <MenuBadge key={badge} badge={badge} />
-          ))}
+          {item.badges?.map((badge) => <MenuBadge key={badge} badge={badge} />)}
         </div>
       )}
     </div>
