@@ -39,6 +39,33 @@ bestätigt**:
 - Die Google-Gesamtnote (3.9 aus 231 Bewertungen) in
   [`content/reviews.json`](./content/reviews.json)
 
+### Der Werbeflyer widerspricht diesen Angaben
+
+Am 2026-08-21 kamen zwei Fotos eines Werbeflyers von Gleis 1 dazu
+(lokal in `Images/`, nicht im Repo). Was darauf steht, weicht an drei
+Stellen von den Verzeichnisdaten ab, die zurzeit auf der Seite stehen:
+
+| | Auf der Seite | Auf dem Flyer |
+| --- | --- | --- |
+| Adresse | Poststrasse 7 | **Poststrasse 7 a** |
+| Telefon | 061 921 04 40 | **079 339 49 56** (letzte Ziffer verdeckt) |
+| Mo–Do | 09:00–22:00 | **10:00–22:00** |
+| Fr–Sa | 09:00–23:00 | **10:00–24:00** |
+| Sonntag | 09:00–21:30 | **11:00–21:00** |
+
+Der Flyer nennt den Betrieb ausserdem schlicht „Gleis 1 Take Away",
+ohne „Kebab".
+
+**Beides ist unbestätigt.** Der Flyer kann veraltet sein, die
+Verzeichnisse können falsch sein — deshalb wurde nichts geändert. Aber
+solange zwei Quellen sich widersprechen, ist mindestens eine falsch, und
+auf der Seite steht zurzeit eine davon.
+
+**Zu tun:** Im Lokal nachfragen, welche Angaben stimmen, und danach
+`site.json` und `hours.json` korrigieren. Die Telefonnummer ist der
+dringendste Punkt: Eine falsche Nummer auf der Seite führt Gäste ins
+Leere.
+
 **Zu tun:** Mit dem Betrieb abgleichen. Danach den Hinweis `note` in
 `hours.json` entfernen bzw. aktualisieren. Dass die Bewertung noch nicht
 bestätigt ist, steht zurzeit im Vorschau-Hinweis (`demoNotice` in

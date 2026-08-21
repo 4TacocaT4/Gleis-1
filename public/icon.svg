@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <title>Gleis 1</title>
-  <!-- Gleisnummer im Kasten, wie die Wortmarke auf der Seite.
-       Farben identisch mit den Tokens in globals.css. -->
-  <rect width="64" height="64" rx="14" fill="#fef2f2"/>
-  <rect x="8" y="8" width="48" height="48" rx="12" fill="#dc2626"/>
-  <path d="M35.5 18v28h-7.2V25.4l-5.3 1.7V21l11-3z" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Gleis 1 — Perrontafel. Gleiche Zeichnung wie src/components/LogoMark.tsx.
+       Änderungen bitte in beiden Dateien machen. -->
+  <path d="M24 0 H100 V76 A24 24 0 0 1 76 100 H24 A24 24 0 0 1 0 76 V24 A24 24 0 0 1 24 0 Z" fill="#dc2626"/>
+  <path d="M28 25 L44 15 L62 15 L62 67 L44 67 L44 27 L28 37 Z" fill="#fef2f2"/>
+  <rect x="22" y="75" width="56" height="9" rx="4.5" fill="#e8b04b"/>
 </svg>

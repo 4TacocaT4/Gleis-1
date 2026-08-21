@@ -1,3 +1,5 @@
+import { LogoMark } from "./LogoMark";
+
 interface LogoProps {
   /** Blendet die kleine Zeile unter dem Namen ein. */
   withTagline?: boolean;
@@ -26,16 +28,9 @@ export function Logo({
 
   return (
     <span className={`flex items-center ${isXl ? "gap-4 sm:gap-5" : "gap-2.5"} ${className}`}>
-      <span
-        aria-hidden="true"
-        className={`grid shrink-0 place-items-center bg-primary font-display font-bold leading-none text-on-primary ${
-          isXl
-            ? "h-16 w-16 rounded-xl text-4xl sm:h-20 sm:w-20 sm:rounded-2xl sm:text-5xl"
-            : "h-10 w-10 rounded-lg text-xl"
-        }`}
-      >
-        1
-      </span>
+      <LogoMark
+        className={`shrink-0 ${isXl ? "h-16 w-16 sm:h-20 sm:w-20" : "h-10 w-10"}`}
+      />
 
       <span className="flex flex-col leading-none">
         <span

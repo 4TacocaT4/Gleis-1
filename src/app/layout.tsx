@@ -77,8 +77,16 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       // assetPath, weil Next.js den Basispfad bei Metadaten-Icons nicht
       // selbst voranstellt — siehe src/lib/assets.ts.
-      icon: [{ url: assetPath("/icon.svg"), type: "image/svg+xml" }],
-      apple: assetPath("/icon.svg"),
+      //
+      // SVG zuerst: skaliert verlustfrei. Das PNG daneben für Browser und
+      // Vorschaudienste, die kein SVG-Favicon lesen. Für iOS eine eigene
+      // randvolle Bitmap — dort wird SVG nicht unterstützt und das System
+      // schneidet die Ecken selbst zu (erzeugt von scripts/build-icons.mjs).
+      icon: [
+        { url: assetPath("/icon.svg"), type: "image/svg+xml" },
+        { url: assetPath("/icon-32.png"), type: "image/png", sizes: "32x32" },
+      ],
+      apple: assetPath("/apple-icon.png"),
     },
   };
 }

@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "check:hours": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-hours.mts",
     "deploy": "node scripts/deploy-pages.mjs",
-    "build:map": "node scripts/build-map.mjs"
+    "build:map": "node scripts/build-map.mjs",
+    "build:icons": "node scripts/build-icons.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
