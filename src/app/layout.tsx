@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { assetPath } from "@/lib/assets";
 import { getHours, getPages, getSite } from "@/lib/content";
 
 /**
@@ -74,8 +75,10 @@ export async function generateMetadata(): Promise<Metadata> {
           googleBot: { index: true, follow: true, "max-image-preview": "large" },
         },
     icons: {
-      icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-      apple: "/icon.svg",
+      // assetPath, weil Next.js den Basispfad bei Metadaten-Icons nicht
+      // selbst voranstellt — siehe src/lib/assets.ts.
+      icon: [{ url: assetPath("/icon.svg"), type: "image/svg+xml" }],
+      apple: assetPath("/icon.svg"),
     },
   };
 }

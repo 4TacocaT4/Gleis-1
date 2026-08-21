@@ -57,11 +57,32 @@ dem Handelsregister (Gleis 1 Take Away GmbH, UID CHE-262.813.970), aber:
 
 ---
 
-## 4. Bilder
+## 4. Bilder sind Platzhalter aus einer Bilddatenbank
 
-Es sind noch keine echten Fotos hinterlegt — überall stehen gestaltete
-Platzhalter. Anleitung dazu in [`content/README.md`](./content/README.md)
-unter „Bilder einsetzen".
+Seit 2026-08-21 stehen echte Fotos auf der Seite — aber **nicht aus dem
+Lokal**. Es sind Aufnahmen von [Pexels](https://www.pexels.com/license/)
+(kostenlos, kommerziell nutzbar, keine Namensnennung nötig). Die genaue
+Zuordnung steht in [`public/images/BILDNACHWEIS.txt`](./public/images/BILDNACHWEIS.txt).
+
+| Wo | Datei | Zeigt |
+| --- | --- | --- |
+| Kopfbereich | `hero-drehspiess.webp` | Einen Drehspiess, nicht den von Gleis 1 |
+| Döner Kebab | `doener-kebab.webp` | Einen Döner, nicht den von Gleis 1 |
+| Dürüm Kebab | `duerum-kebab.webp` | Einen Dürüm, nicht den von Gleis 1 |
+| Pepito | `pepito.webp` | Ein Baguette, nicht das von Gleis 1 |
+| Falafel im Taschenbrot | `falafel-taschenbrot.webp` | Falafel, nicht die von Gleis 1 |
+| Über uns | `lokal.webp` | Eine fremde Grillplatte, nicht das Lokal |
+
+**Warum das vor dem Livegang weg muss:** Ein Foto neben „Döner Kebab
+CHF 10.00" liest sich als Zusage, wie das Gericht aussieht. Und das Bild
+im Abschnitt „Über uns" behauptet, das Lokal zu zeigen. Beides trifft
+zurzeit nicht zu.
+
+**Zu tun:** Mit dem Handy im Lokal fotografieren und ersetzen — gleiche
+Dateinamen genügen, dann muss nichts angepasst werden. Anleitung in
+[`content/README.md`](./content/README.md) unter „Bilder einsetzen".
+Gut brauchbar sind Aufnahmen bei Tageslicht ohne Blitz; Gesichter von
+Gästen oder Mitarbeitenden nur mit deren Einverständnis.
 
 ---
 

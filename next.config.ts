@@ -13,6 +13,10 @@ const basePath = process.env.PAGES_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+
+  // Der Basispfad muss auch im Browser bekannt sein: next/image hängt ihn
+  // bei `unoptimized` nicht selbst an die Bildpfade. Siehe src/lib/assets.ts.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   poweredByHeader: false,
   compress: true,
 

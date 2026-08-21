@@ -21,8 +21,8 @@
       "Rollstuhlgängig"
     ],
     "image": {
-      "src": "",
-      "alt": "Blick auf den Drehspiess im Gleis 1",
+      "src": "/images/hero-drehspiess.webp",
+      "alt": "Drehspiess mit knusprig gebratenem Kebabfleisch.",
       "placeholderLabel": "Hero-Bild"
     }
   },
@@ -86,8 +86,8 @@
       }
     ],
     "image": {
-      "src": "",
-      "alt": "Innenansicht des Lokals",
+      "src": "/images/lokal.webp",
+      "alt": "Frisch gerollte Dürüm auf der heissen Grillplatte.",
       "placeholderLabel": "Über uns"
     }
   },

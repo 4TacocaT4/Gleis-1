@@ -8,8 +8,12 @@
  * **einmalig beim Entwickeln** heruntergeladen und als fertiges Bild in
  * public/images/ abgelegt. Zur Laufzeit passiert nichts mehr.
  *
- * Quelle: OpenStreetMap. Die Lizenz (ODbL) verlangt eine sichtbare
- * Namensnennung — sie steht im Besuch-Bereich unter der Karte.
+ * Warum Kacheln ohne Beschriftung? Das Bild soll ruhig wirken und keine
+ * Strassen- oder Ortsnamen zeigen. Die Standard-Kacheln von OpenStreetMap
+ * haben die Namen fest eingebrannt und lassen sich nicht abschalten; die
+ * "nolabels"-Variante von CARTO (Stil "Voyager") zeichnet dieselben Daten
+ * rein grafisch: Strassen, Gebäude und die Bahnlinie als Flächen und Linien,
+ * kein einziges Wort. Die Adresse steht auf der Seite direkt über der Karte.
  *
  * Aufruf:  node scripts/build-map.mjs
  */
@@ -23,10 +27,11 @@ const ZOOM = 17;
 // damit auch für Retina-Displays; 1400 war unnötig schwer, und beim
 // statischen Export liefert Next.js die Datei ungerechnet aus.
 const WIDTH = 1200;
-const HEIGHT = 525; // 16:7, passend zum Seitenverhältnis der Karte im Layout
+const HEIGHT = 525; // 16:7 — schmalere Zuschnitte übernimmt CSS per object-cover
 const TILE = 256;
 
 const UA = "Gleis1-Website/1.0 (statisches Kartenbild, einmaliger Build)";
+const SUBDOMAINS = ["a", "b", "c", "d"];
 
 /** Weltpixel-Koordinaten nach Web-Mercator. */
 function project(lat, lon, zoom) {
@@ -37,8 +42,9 @@ function project(lat, lon, zoom) {
   return { x, y };
 }
 
-async function fetchTile(z, x, y) {
-  const url = `https://tile.openstreetmap.org/${z}/${x}/${y}.png`;
+async function fetchTile(z, x, y, i) {
+  const sub = SUBDOMAINS[i % SUBDOMAINS.length];
+  const url = `https://${sub}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/${z}/${x}/${y}.png`;
   const res = await fetch(url, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`Kachel ${z}/${x}/${y}: HTTP ${res.status}`);
   return Buffer.from(await res.arrayBuffer());
@@ -55,18 +61,19 @@ const tileY1 = Math.floor((top + HEIGHT) / TILE);
 
 const cols = tileX1 - tileX0 + 1;
 const rows = tileY1 - tileY0 + 1;
-console.log(`Lade ${cols * rows} Kacheln (Zoom ${ZOOM}) …`);
+console.log(`Lade ${cols * rows} Kacheln (Zoom ${ZOOM}, ohne Beschriftung) …`);
 
 const composites = [];
+let index = 0;
 for (let ty = tileY0; ty <= tileY1; ty++) {
   for (let tx = tileX0; tx <= tileX1; tx++) {
-    const buf = await fetchTile(ZOOM, tx, ty);
+    const buf = await fetchTile(ZOOM, tx, ty, index++);
     composites.push({
       input: buf,
       left: tx * TILE - tileX0 * TILE,
       top: ty * TILE - tileY0 * TILE,
     });
-    // Höflich bleiben: die OSM-Kachelserver sind ein Freiwilligenprojekt.
+    // Höflich bleiben: die Kachelserver sind ein kostenloses Angebot.
     await new Promise((r) => setTimeout(r, 120));
   }
 }
@@ -93,16 +100,43 @@ const cropped = await sharp(stitched)
   })
   .toBuffer();
 
-// Markierung in den Farben der Seite (--color-primary #dc2626).
-const markerSize = 92;
+// Die Kacheln kommen neutral-kühl. Ein leichter warmer Schleier legt sie auf
+// die Palette der Seite (Hintergrund #fef2f2), damit die Karte nicht wie ein
+// Fremdkörper zwischen den warmen Flächen sitzt. Multiplizieren statt
+// Einfärben: die Helligkeitsabstufungen bleiben dabei vollständig erhalten.
+//
+// Das `linear` davor spreizt den Kontrast. Ohne diesen Schritt liegt die
+// Karte so nah am Seitenhintergrund, dass sie wie ein nicht geladenes Bild
+// wirkt — Strassen und Bahnlinie waren kaum vom Untergrund zu trennen.
+const warmed = await sharp(cropped)
+  .modulate({ saturation: 0.55 })
+  .linear(1.2, -28)
+  .composite([
+    {
+      input: {
+        create: {
+          width: WIDTH,
+          height: HEIGHT,
+          channels: 4,
+          background: { r: 255, g: 240, b: 236, alpha: 1 },
+        },
+      },
+      blend: "multiply",
+    },
+  ])
+  .toBuffer();
+
+// Markierung in den Farben der Seite (--color-primary #dc2626). Ohne
+// Beschriftung ist sie der einzige Anhaltspunkt — deshalb etwas kräftiger.
+const markerSize = 104;
 const marker = Buffer.from(`
-<svg xmlns="http://www.w3.org/2000/svg" width="${markerSize}" height="${markerSize}" viewBox="0 0 92 92">
-  <circle cx="46" cy="46" r="30" fill="#dc2626" opacity="0.18"/>
-  <circle cx="46" cy="46" r="19" fill="#dc2626" stroke="#ffffff" stroke-width="5"/>
-  <circle cx="46" cy="46" r="6" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="${markerSize}" height="${markerSize}" viewBox="0 0 104 104">
+  <circle cx="52" cy="52" r="40" fill="#dc2626" opacity="0.14"/>
+  <circle cx="52" cy="52" r="26" fill="#dc2626" opacity="0.22"/>
+  <circle cx="52" cy="52" r="15" fill="#dc2626" stroke="#ffffff" stroke-width="5"/>
 </svg>`);
 
-const withMarker = await sharp(cropped)
+const withMarker = await sharp(warmed)
   .composite([
     {
       input: marker,
@@ -113,7 +147,7 @@ const withMarker = await sharp(cropped)
   .toBuffer();
 
 await sharp(withMarker)
-  .webp({ quality: 76 })
+  .webp({ quality: 78 })
   .toFile("public/images/karte-liestal.webp");
 
 // Bewusst nur WebP: Alles in public/ wird beim statischen Export
@@ -125,7 +159,8 @@ writeFileSync(
   `Kartenausschnitt Poststrasse 7, 4410 Liestal\n` +
     `Koordinaten: ${LAT}, ${LON} (Zoom ${ZOOM})\n` +
     `Erzeugt mit scripts/build-map.mjs\n` +
-    `Kartendaten © OpenStreetMap-Mitwirkende, ODbL\n`,
+    `Kacheln: CARTO "voyager_nolabels" (ohne Beschriftung)\n` +
+    `Kartendaten (c) OpenStreetMap-Mitwirkende, ODbL - Kacheln (c) CARTO\n`,
 );
 
-console.log(`Fertig: ${meta.width}×${meta.height} → public/images/karte-liestal.webp`);
+console.log(`Fertig: ${meta.width}x${meta.height} -> public/images/karte-liestal.webp`);

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 import type { ImageRef } from "@/lib/types";
 
 interface SmartImageProps {
@@ -41,7 +42,7 @@ export function SmartImage({
     >
       {hasImage ? (
         <Image
-          src={image!.src}
+          src={assetPath(image!.src)}
           alt={image!.alt}
           fill
           sizes={sizes}

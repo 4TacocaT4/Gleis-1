@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Icon } from "./Icon";
 import { OpenStatus } from "./OpenStatus";
 import { OpeningHoursTable } from "./OpeningHoursTable";
+import { assetPath } from "@/lib/assets";
 import { telHref } from "@/lib/format";
 import type { OpeningHours, SiteConfig, VisitContent } from "@/lib/types";
 
@@ -89,63 +90,61 @@ export function Visit({ content, site, hours }: VisitProps) {
               </div>
             </div>
 
-            {/* Karte: fertiges Bild aus OpenStreetMap-Kacheln, erzeugt von
-                scripts/build-map.mjs. Bewusst keine eingebettete Live-Karte —
-                die würde bei jedem Aufruf von fremden Servern nachladen,
-                Cookies setzen und Ladezeit kosten. So bleibt die Seite frei
-                von externen Requests. */}
-            <a
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              // Auf dem Handy höher: Bei 16:7 blieben von 120 px Höhe nach dem
-              // Beschriftungsbalken nur rund 76 px Karte übrig.
-              className="group relative mt-7 block aspect-[3/2] overflow-hidden rounded-xl border-2 border-border transition-colors duration-200 hover:border-primary sm:aspect-[16/7]"
-            >
+            {/* Karte: fertiges Bild aus Kartenkacheln ohne Beschriftung,
+                erzeugt von scripts/build-map.mjs. Bewusst keine eingebettete
+                Live-Karte — die würde bei jedem Aufruf von fremden Servern
+                nachladen, Cookies setzen und Ladezeit kosten. So bleibt die
+                Seite frei von externen Requests, und die Datei ist mit rund
+                35 KB sofort da.
+
+                Bewusst nur ein Bild, kein Link und keine Beschriftung darauf:
+                Die Adresse steht vollständig im Textblock darüber, der Aufruf
+                zu Google Maps darunter. */}
+            <div className="relative mt-7 aspect-[16/9] overflow-hidden rounded-xl border-2 border-border sm:aspect-[16/7]">
               <Image
-                src="/images/karte-liestal.webp"
-                alt={`Kartenausschnitt: ${site.name} an der ${address.street} in ${address.city}, direkt beim Bahnhof`}
+                src={assetPath("/images/karte-liestal.webp")}
+                alt="Kartenausschnitt der Umgebung. Der Standort ist mit einem roten Punkt markiert, direkt an der Bahnlinie."
                 fill
                 sizes="(min-width: 1024px) 640px, 92vw"
-                className="object-cover transition-transform duration-500 ease-[var(--ease-out-soft)] group-hover:scale-[1.03]"
+                className="object-cover"
               />
+            </div>
 
-              {/* Aufruf unten aufgesetzt: Die Karte bleibt sichtbar, der
-                  Hinweis liegt nur auf einem abgedunkelten Streifen. */}
-              <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-foreground px-4 py-3">
-                {/* Auf dem Handy nur die Strasse — die volle Adresse bricht dort
-                    auf zwei Zeilen um und macht den Balken unnötig hoch. Sie
-                    steht ohnehin direkt darüber in der Karte. */}
-                <span className="inline-flex min-w-0 items-center gap-2 text-sm font-bold text-background">
-                  <Icon name="pin" size={18} />
-                  <span className="truncate">
-                    {address.street}
-                    <span className="hidden sm:inline">
-                      , {address.zip} {address.city}
-                    </span>
-                  </span>
-                </span>
-                <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-bold text-background">
-                  <span className="hidden sm:inline">In Google Maps öffnen</span>
-                  <span className="sm:hidden">Karte</span>
-                  <Icon name="external" size={16} />
-                </span>
-              </div>
-            </a>
-
-            {/* Die ODbL-Lizenz von OpenStreetMap verlangt diese Nennung. */}
-            <p className="mt-2 text-xs text-muted-foreground">
-              Kartendaten ©{" "}
+            <div className="mt-3 flex flex-wrap items-center justify-between gap-x-5 gap-y-1">
               <a
-                href="https://www.openstreetmap.org/copyright"
+                href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline underline-offset-2 transition-colors duration-200 hover:text-primary-text"
+                className="inline-flex min-h-11 items-center gap-2 font-semibold text-foreground underline decoration-2 underline-offset-4 transition-colors duration-200 hover:text-primary-text"
               >
-                OpenStreetMap
+                <Icon name="pin" size={20} className="text-primary" />
+                In Google Maps öffnen
+                <Icon name="external" size={16} />
               </a>
-              -Mitwirkende
-            </p>
+
+              {/* Die ODbL verlangt die Nennung von OpenStreetMap, CARTO die
+                  der Kacheln. */}
+              <p className="text-xs text-muted-foreground">
+                Kartendaten ©{" "}
+                <a
+                  href="https://www.openstreetmap.org/copyright"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 transition-colors duration-200 hover:text-primary-text"
+                >
+                  OpenStreetMap
+                </a>
+                -Mitwirkende, Kacheln ©{" "}
+                <a
+                  href="https://carto.com/attributions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 transition-colors duration-200 hover:text-primary-text"
+                >
+                  CARTO
+                </a>
+              </p>
+            </div>
 
             <dl className="mt-7 grid gap-x-6 gap-y-4 border-t-2 border-border pt-6 sm:grid-cols-2">
               {content.infos.map((info) => (

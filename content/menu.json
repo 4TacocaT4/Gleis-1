@@ -17,7 +17,10 @@
           ],
           "featured": true,
           "available": true,
-          "image": null
+          "image": {
+            "src": "/images/doener-kebab.webp",
+            "alt": "Döner Kebab im Taschenbrot, aufgeschnitten."
+          }
         },
         {
           "id": "duerum-kebab",
@@ -29,7 +32,10 @@
           ],
           "featured": true,
           "available": true,
-          "image": null
+          "image": {
+            "src": "/images/duerum-kebab.webp",
+            "alt": "Dürüm Kebab im Fladenbrot mit Fleisch und Salat."
+          }
         },
         {
           "id": "doener-gyros",
@@ -181,7 +187,10 @@
           ],
           "featured": true,
           "available": true,
-          "image": null
+          "image": {
+            "src": "/images/pepito.webp",
+            "alt": "Pepito im Baguette mit Fleisch und Käse."
+          }
         },
         {
           "id": "hamburger",
@@ -255,7 +264,10 @@
             "vegetarisch"
           ],
           "available": true,
-          "image": null,
+          "image": {
+            "src": "/images/falafel-taschenbrot.webp",
+            "alt": "Falafel mit Taschenbrot und Pommes."
+          },
           "featured": true
         },
         {
