@@ -86,9 +86,11 @@ export function Header({ site, hours }: HeaderProps) {
         style={{ height: "var(--header-height)" }}
       >
         <div className="container-page flex h-full items-center justify-between gap-4">
+          {/* Führt zum Seitenanfang. Der Hover-Zustand ist nicht Zierde:
+              Ohne ihn sieht die Wortmarke nicht anklickbar aus. */}
           <a
             href="#top"
-            className="flex min-h-11 items-center rounded-lg"
+            className="flex min-h-11 items-center rounded-lg opacity-100 transition-opacity duration-200 hover:opacity-70"
             aria-label={`${site.name} — zum Seitenanfang`}
           >
             <Logo />

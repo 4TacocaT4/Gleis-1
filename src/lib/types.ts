@@ -211,8 +211,6 @@ export interface RatingSummary {
   /** Woher die Bewertung stammt, z. B. "Google". Wird sichtbar genannt. */
   source: string;
   sourceUrl: string;
-  /** Stand/Vorbehalt, wird klein unter der Bewertung angezeigt. */
-  asOf?: string;
 }
 
 export interface ReviewTheme {
@@ -260,11 +258,20 @@ export interface HeroContent {
 /** Icons stammen aus `src/components/Icon.tsx` (Phosphor). */
 export type IconName = "flame" | "leaf" | "clock" | "train" | "hand" | "sparkle";
 
+/**
+ * Farbrolle einer Karte. Die drei Werte entsprechen den Akzentfarben der
+ * Palette; ohne Angabe bleibt es beim Rot.
+ */
+export type AccentTone = "primary" | "accent" | "success";
+
 export interface Highlight {
   id: string;
   icon: IconName;
   title: string;
   text: string;
+  /** Kurze Kennzahl, erscheint als farbige Pille unter dem Text. */
+  fact?: string;
+  tone?: AccentTone;
 }
 
 export interface HighlightsContent {

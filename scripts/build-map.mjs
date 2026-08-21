@@ -100,17 +100,18 @@ const cropped = await sharp(stitched)
   })
   .toBuffer();
 
-// Die Kacheln kommen neutral-kühl. Ein leichter warmer Schleier legt sie auf
-// die Palette der Seite (Hintergrund #fef2f2), damit die Karte nicht wie ein
-// Fremdkörper zwischen den warmen Flächen sitzt. Multiplizieren statt
-// Einfärben: die Helligkeitsabstufungen bleiben dabei vollständig erhalten.
+// Die Farben der Kacheln werden angehoben, nicht gedämpft: Gebäudeflächen,
+// Grünanlagen und die Bahnanlage sollen sich deutlich voneinander abheben.
+// Der ganz leichte warme Schleier bindet das Ganze an die Palette der Seite
+// (Hintergrund #fef2f2), ohne die Farben zu schlucken — multiplizieren statt
+// einfärben, dadurch bleiben die Helligkeitsabstufungen erhalten.
 //
-// Das `linear` davor spreizt den Kontrast. Ohne diesen Schritt liegt die
-// Karte so nah am Seitenhintergrund, dass sie wie ein nicht geladenes Bild
-// wirkt — Strassen und Bahnlinie waren kaum vom Untergrund zu trennen.
+// Das `linear` spreizt zusätzlich den Kontrast. Ohne diesen Schritt liegt
+// die Karte so nah am Seitenhintergrund, dass sie wie ein nicht geladenes
+// Bild wirkt — Strassen und Bahnlinie waren kaum vom Untergrund zu trennen.
 const warmed = await sharp(cropped)
-  .modulate({ saturation: 0.55 })
-  .linear(1.2, -28)
+  .modulate({ brightness: 0.9, saturation: 2.3 })
+  .linear(1.5, -110)
   .composite([
     {
       input: {
@@ -118,7 +119,7 @@ const warmed = await sharp(cropped)
           width: WIDTH,
           height: HEIGHT,
           channels: 4,
-          background: { r: 255, g: 240, b: 236, alpha: 1 },
+          background: { r: 255, g: 247, b: 242, alpha: 1 },
         },
       },
       blend: "multiply",

@@ -5,23 +5,26 @@ Alle Fotos stammen von Pexels und stehen unter der Pexels-Lizenz:
 kostenlos, auch kommerziell nutzbar, Bearbeitung erlaubt, keine
 Namensnennung erforderlich (https://www.pexels.com/license/).
 
-Es sind PLATZHALTER. Sie zeigen nicht die Speisen und nicht die Räume
+Es sind PLATZHALTER. Sie zeigen nicht die Speisen und nicht die Raeume
 von Gleis 1. Vor dem Livegang durch echte Aufnahmen aus dem Lokal
 ersetzen — siehe OFFENE-PUNKTE.md.
 
 Datei                        Quelle
 ---------------------------  ------------------------------------------
-hero-drehspiess.webp         pexels.com/photo/12203625
 doener-kebab.webp            pexels.com/photo/18330009
 duerum-kebab.webp            pexels.com/photo/11286814
 pepito.webp                  pexels.com/photo/1603898
 falafel-taschenbrot.webp     pexels.com/photo/14877083
-lokal.webp                   pexels.com/photo/27744717
+lokal.webp                   pexels.com/photo/15339516
 
 Bearbeitung: mittig auf 4:3 beschnitten, als WebP gespeichert.
 4:3 liegt zwischen den drei Container-Verhaeltnissen der Seite
 (5:4 / 4:3 / 16:10), dadurch schneidet keiner der Zuschnitte
 nennenswert etwas weg.
+
+Im Kopfbereich liegt kein Foto: Dort steht die Wortmarke
+(src/components/BrandPanel.tsx). Sobald in content/pages.json unter
+hero.image.src ein Pfad steht, zeigt der Hero stattdessen dieses Bild.
 
 karte-liestal.webp ist kein Foto, sondern ein erzeugtes Kartenbild
 (siehe karte-liestal.txt und scripts/build-map.mjs).

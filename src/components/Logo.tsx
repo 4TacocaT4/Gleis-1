@@ -1,30 +1,58 @@
 interface LogoProps {
   /** Blendet die kleine Zeile unter dem Namen ein. */
   withTagline?: boolean;
+  /** "sm" für die Kopfzeile, "xl" für die Markentafel im Hero. */
+  size?: "sm" | "xl";
+  /** Auf dunklem Grund werden Name und Zusatzzeile hell gesetzt. */
+  onDark?: boolean;
   className?: string;
 }
 
 /**
- * Wortmarke im Stil einer Bahnsteigtafel: Gleisnummer im Kasten, daneben der
- * Name. Rein per CSS gesetzt und dadurch gestochen scharf in jeder Grösse —
+ * Wortmarke im Stil einer Perrontafel: Gleisnummer im Kasten, daneben der
+ * Name. Rein per CSS gesetzt und dadurch in jeder Grösse gestochen scharf —
  * später problemlos gegen ein echtes Logo (SVG) austauschbar.
+ *
+ * Kopfzeile und Hero zeigen dieselbe Marke, nur in zwei Grössen. Deshalb
+ * liegen die Grössen hier zusammen und nicht verstreut in den Komponenten.
  */
-export function Logo({ withTagline = false, className = "" }: LogoProps) {
+export function Logo({
+  withTagline = false,
+  size = "sm",
+  onDark = false,
+  className = "",
+}: LogoProps) {
+  const isXl = size === "xl";
+
   return (
-    <span className={`flex items-center gap-2.5 ${className}`}>
+    <span className={`flex items-center ${isXl ? "gap-4 sm:gap-5" : "gap-2.5"} ${className}`}>
       <span
         aria-hidden="true"
-        className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary font-display text-xl font-bold leading-none text-on-primary"
+        className={`grid shrink-0 place-items-center bg-primary font-display font-bold leading-none text-on-primary ${
+          isXl
+            ? "h-16 w-16 rounded-xl text-4xl sm:h-20 sm:w-20 sm:rounded-2xl sm:text-5xl"
+            : "h-10 w-10 rounded-lg text-xl"
+        }`}
       >
         1
       </span>
 
       <span className="flex flex-col leading-none">
-        <span className="font-display text-xl font-bold tracking-tight text-foreground">
+        <span
+          className={`font-display font-bold tracking-tight ${
+            isXl ? "text-4xl sm:text-5xl" : "text-xl"
+          } ${onDark ? "text-background" : "text-foreground"}`}
+        >
           Gleis&nbsp;1
         </span>
         {withTagline && (
-          <span className="mt-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-accent-text">
+          <span
+            className={`font-bold uppercase ${
+              isXl
+                ? "mt-2.5 text-[0.6875rem] tracking-[0.2em] sm:mt-3 sm:text-xs sm:tracking-[0.26em]"
+                : "mt-1.5 text-[0.6875rem] tracking-[0.16em]"
+            } ${onDark ? "text-accent-on-dark" : "text-accent-text"}`}
+          >
             Kebab &amp; Take Away
           </span>
         )}

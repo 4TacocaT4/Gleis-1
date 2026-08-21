@@ -21,8 +21,8 @@
       "Rollstuhlgängig"
     ],
     "image": {
-      "src": "/images/hero-drehspiess.webp",
-      "alt": "Drehspiess mit knusprig gebratenem Kebabfleisch.",
+      "src": "",
+      "alt": "",
       "placeholderLabel": "Hero-Bild"
     }
   },
@@ -43,20 +43,26 @@
       {
         "id": "h1",
         "icon": "train",
+        "tone": "primary",
+        "fact": "Direkt am Bahnhof",
         "title": "Zug erreicht, Hunger gestillt",
-        "text": "Wir liegen direkt am Bahnhof Liestal. Zwischen zwei Zügen reicht die Zeit locker."
+        "text": "Wir liegen an der Poststrasse, direkt beim Bahnhof Liestal. Zwischen zwei Zügen reicht die Zeit locker für einen Dürüm — und wenn es besonders schnell gehen soll, rufen Sie kurz vorher an und nehmen ihn im Vorbeigehen mit."
       },
       {
         "id": "h2",
         "icon": "clock",
+        "tone": "accent",
+        "fact": "7 Tage die Woche",
         "title": "Ab 9 Uhr für Sie da",
-        "text": "Sieben Tage die Woche, von morgens bis spät am Abend."
+        "text": "Sieben Tage die Woche, von neun Uhr morgens bis spät am Abend. Mittagspause, Feierabend oder der späte Hunger auf dem Heimweg — Sie müssen selten vorher auf die Uhr schauen."
       },
       {
         "id": "h3",
         "icon": "hand",
+        "tone": "success",
+        "fact": "Drinnen & draussen",
         "title": "Mitnehmen oder bleiben",
-        "text": "Sitzplätze drinnen und draussen, rollstuhlgängig. Oder einfach einpacken lassen."
+        "text": "Sitzplätze gibt es drinnen und draussen, der Zugang ist rollstuhlgängig. Und wer lieber zu Hause isst, lässt sich alles von der Karte einpacken — bezahlt wird bar oder mit Karte."
       }
     ]
   },
@@ -87,7 +93,7 @@
     ],
     "image": {
       "src": "/images/lokal.webp",
-      "alt": "Frisch gerollte Dürüm auf der heissen Grillplatte.",
+      "alt": "Kebabfleisch wird am Drehspiess über den glühenden Heizstäben abgeschnitten.",
       "placeholderLabel": "Über uns"
     }
   },

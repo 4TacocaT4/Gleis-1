@@ -36,7 +36,7 @@ Sie sind als Ausgangspunkt gedacht und gehören vor dem Livegang bestätigt.
 2. **`hours.json`** → Öffnungszeiten bestätigen, danach `note` löschen
 3. **`site.json`** → `address`, `contact`, `seo.siteUrl` prüfen bzw. eintragen
 4. **`legal.json`** → Impressum und Datenschutz vervollständigen (bitte rechtlich prüfen lassen)
-5. **`reviews.json`** → Note und Anzahl gegen die Quelle abgleichen, `asOf` aktualisieren
+5. **`reviews.json`** → Note und Anzahl gegen die Quelle abgleichen
 6. **`site.json`** → `demoMode` auf `false` setzen, damit der Vorschau-Hinweis verschwindet
 
 ---
@@ -115,8 +115,7 @@ auf, sobald jemand die Bewertungsseite aufruft.
 ```json
 "rating": {
   "value": 3.9, "max": 5, "count": 231,
-  "source": "Google", "sourceUrl": "https://…",
-  "asOf": "Stand: Januar 2026"
+  "source": "Google", "sourceUrl": "https://…"
 }
 ```
 

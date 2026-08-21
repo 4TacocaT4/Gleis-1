@@ -7,27 +7,26 @@
     "max": 5,
     "count": 231,
     "source": "Google",
-    "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Gleis%201%20Kebab%20Take%20away%2C%20Poststrasse%207%2C%204410%20Liestal",
-    "asOf": "Stand: öffentliche Verzeichnisse, noch nicht bestätigt"
+    "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Gleis%201%20Kebab%20Take%20away%2C%20Poststrasse%207%2C%204410%20Liestal"
   },
   "themes": [
     {
       "id": "r1",
       "icon": "leaf",
       "label": "Frisches Gemüse",
-      "text": "In Rückmeldungen häufig genannt: knackiges, frisches Gemüse."
+      "text": "Knackiges, frisches Gemüse wird in öffentlichen Rückmeldungen besonders häufig genannt. Es steckt in jedem Kebab, im Dürüm und im Taschenbrot — und wer nur das möchte, findet vier Salate als eigene Gerichte auf der Karte."
     },
     {
       "id": "r2",
       "icon": "flame",
       "label": "Würziges Fleisch",
-      "text": "Der Geschmack vom Drehspiess wird regelmässig positiv erwähnt."
+      "text": "Der Geschmack vom Drehspiess kommt in den Rückmeldungen regelmässig gut weg. Er ist die Grundlage der sieben Kebab- und Dürüm-Varianten, taucht in den Menüs mit Getränk wieder auf — und sogar auf einer der Pizzas."
     },
     {
       "id": "r3",
       "icon": "train",
       "label": "Lage am Bahnhof",
-      "text": "Die direkte Nähe zum Bahnhof Liestal wird als grosser Vorteil genannt."
+      "text": "Die direkte Nähe zum Bahnhof Liestal wird als grosser Vorteil genannt. Wer mit dem Auto kommt, findet rund 200 Meter entfernt Parkplätze — die Karte weiter unten zeigt, wo genau wir stehen."
     }
   ],
   "quotes": [],

@@ -40,7 +40,10 @@ bestätigt**:
   [`content/reviews.json`](./content/reviews.json)
 
 **Zu tun:** Mit dem Betrieb abgleichen. Danach den Hinweis `note` in
-`hours.json` und `asOf` in `reviews.json` entfernen bzw. aktualisieren.
+`hours.json` entfernen bzw. aktualisieren. Dass die Bewertung noch nicht
+bestätigt ist, steht zurzeit im Vorschau-Hinweis (`demoNotice` in
+`site.json`) — er verschwindet mit `demoMode: false`, also erst, wenn die
+Zahlen stimmen.
 
 ---
 
@@ -66,12 +69,15 @@ Zuordnung steht in [`public/images/BILDNACHWEIS.txt`](./public/images/BILDNACHWE
 
 | Wo | Datei | Zeigt |
 | --- | --- | --- |
-| Kopfbereich | `hero-drehspiess.webp` | Einen Drehspiess, nicht den von Gleis 1 |
 | Döner Kebab | `doener-kebab.webp` | Einen Döner, nicht den von Gleis 1 |
 | Dürüm Kebab | `duerum-kebab.webp` | Einen Dürüm, nicht den von Gleis 1 |
 | Pepito | `pepito.webp` | Ein Baguette, nicht das von Gleis 1 |
 | Falafel im Taschenbrot | `falafel-taschenbrot.webp` | Falafel, nicht die von Gleis 1 |
-| Über uns | `lokal.webp` | Eine fremde Grillplatte, nicht das Lokal |
+| Über uns | `lokal.webp` | Einen fremden Drehspiess, nicht das Lokal |
+
+Im Kopfbereich steht bewusst kein Foto, sondern die Wortmarke. Ein echtes
+Logo des Betriebs würde sie ersetzen; ein gutes Foto aus dem Lokal ebenso
+(Pfad in `content/pages.json` unter `hero.image.src` eintragen).
 
 **Warum das vor dem Livegang weg muss:** Ein Foto neben „Döner Kebab
 CHF 10.00" liest sich als Zusage, wie das Gericht aussieht. Und das Bild

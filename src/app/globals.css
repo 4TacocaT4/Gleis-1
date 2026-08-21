@@ -59,6 +59,12 @@
   --color-surface-warm: #fff7f5;
   --color-foreground-soft: #7c2d2d;
   --color-success: #15803d;
+  /* Dunklere Stufe für kleine Schrift: #15803d erreicht auf der hellen
+     Grünfläche der Pillen nur 4.38:1, diese hier 6.3:1. */
+  --color-success-text: #166534;
+  /* Das Palettengold auf dunklem Grund nur 3.2:1 — diese hellere Stufe
+     derselben Farbe erreicht 8.2:1 auf #450a0a. */
+  --color-accent-on-dark: #e8b04b;
 
   /* --- Schriften ------------------------------------------------ */
   /* Fraunces für Überschriften, Karla für Fliesstext. Fraunces bewusst statt

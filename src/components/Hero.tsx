@@ -1,3 +1,4 @@
+import { BrandPanel } from "./BrandPanel";
 import { Icon } from "./Icon";
 import { OpenStatus } from "./OpenStatus";
 import { SmartImage } from "./SmartImage";
@@ -109,13 +110,20 @@ export function Hero({ hero, site, hours }: HeroProps) {
             style={{ "--reveal-delay": "180ms" } as React.CSSProperties}
             className="relative lg:col-span-6"
           >
-            <SmartImage
-              image={hero.image}
-              ratio={null}
-              priority
-              sizes="(min-width: 1024px) 46vw, 92vw"
-              className="rounded-2xl border-2 border-border shadow-[0_24px_60px_-30px_rgba(69,10,10,0.45)] aspect-[5/4] sm:aspect-[16/10] lg:aspect-[4/3]"
-            />
+            {/* Ohne hinterlegtes Foto steht hier die Markentafel statt eines
+                grauen Platzhalters. Ein Pfad in hero.image.src schaltet
+                automatisch auf das Foto um. */}
+            {hero.image?.src ? (
+              <SmartImage
+                image={hero.image}
+                ratio={null}
+                priority
+                sizes="(min-width: 1024px) 46vw, 92vw"
+                className="aspect-[5/4] rounded-2xl border-2 border-border shadow-[0_24px_60px_-30px_rgba(69,10,10,0.45)] sm:aspect-[16/10] lg:aspect-[4/3]"
+              />
+            ) : (
+              <BrandPanel className="aspect-[5/4] rounded-2xl border-2 border-border shadow-[0_24px_60px_-30px_rgba(69,10,10,0.45)] sm:aspect-[16/10] lg:aspect-[4/3]" />
+            )}
 
             {/* Adresskarte, überlappt das Bild und schafft Tiefe. */}
             <div className="mt-4 flex items-start gap-3 rounded-xl border-2 border-border bg-card p-4 sm:absolute sm:bottom-5 sm:left-5 sm:mt-0 sm:max-w-[17rem] sm:shadow-lg">

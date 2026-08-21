@@ -30,7 +30,14 @@ export function Reviews({ content }: { content: ReviewsContent }) {
             untereinander, die Note als flache Zeile statt hoher Karte. */}
         <div className="mt-6 grid gap-3 sm:mt-10 sm:gap-5 lg:grid-cols-12">
           {rating && (
-            <div data-reveal className="card border-2 p-4 sm:p-6 lg:col-span-4 lg:p-7">
+            /* `lg:self-start`: Ohne diese Klasse zieht das Raster die
+               Notenkarte auf die Höhe der Themenkarten daneben — nach dem
+               Wegfall der Fussnote blieben darunter rund 200 px leere
+               Fläche. */
+            <div
+              data-reveal
+              className="card border-2 p-4 sm:p-6 lg:col-span-4 lg:self-start lg:p-7"
+            >
               <div className="flex flex-wrap items-center gap-x-5 gap-y-3 lg:block">
                 <p className="flex items-baseline gap-1.5 lg:gap-2">
                   <span className="tnum font-display text-4xl font-bold text-primary sm:text-6xl">
@@ -72,16 +79,11 @@ export function Reviews({ content }: { content: ReviewsContent }) {
                 </a>
               </div>
 
-              {rating.asOf && (
-                <p className="mt-3 border-t border-border pt-3 text-sm text-muted-foreground lg:mt-4 lg:pt-4">
-                  {rating.asOf}
-                </p>
-              )}
             </div>
           )}
 
           {/* Wiederkehrende Themen */}
-          <ul className="grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 sm:grid-cols-3 sm:gap-5 lg:col-span-8">
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-5 lg:col-span-8">
           {content.themes.map((theme, index) => {
             const isLastOdd =
               content.themes.length % 2 === 1 && index === content.themes.length - 1;
@@ -92,7 +94,7 @@ export function Reviews({ content }: { content: ReviewsContent }) {
                 data-reveal
                 style={{ "--reveal-delay": `${index * 70}ms` } as React.CSSProperties}
                 className={
-                  isLastOdd ? "min-[360px]:col-span-2 sm:col-span-1" : undefined
+                  isLastOdd ? "sm:col-span-1" : undefined
                 }
               >
                 <article className="card flex h-full flex-col border-2 p-4 sm:p-6">
